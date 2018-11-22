@@ -5,6 +5,8 @@
  */
 package vistas;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author leteo
@@ -14,9 +16,12 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    JPanel [] paneles = new JPanel[2];
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        paneles[0] = this.pnlMultiplicacion;
+        paneles[1] = this.pnlEliGauss;
     }
 
     /**
@@ -41,6 +46,7 @@ public class Principal extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(800, 600));
 
         jPanel1.setBackground(new java.awt.Color(37, 45, 68));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1028, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
@@ -57,6 +63,11 @@ public class Principal extends javax.swing.JFrame {
             String[] strings = { "Multiplicación de matrices", "Eliminación de Gauss", "Gauss Jordan", "Matriz inversa", "Gauss Seidel" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList1ValueChanged(evt);
+            }
         });
         jScrollPane1.setViewportView(jList1);
 
@@ -116,7 +127,9 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,6 +138,15 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+        for (int i = 0; i < paneles.length; i++) {
+            if (i != this.jList1.getSelectedIndex()) {
+                this.paneles[i].setVisible(false);
+            }
+        }
+        paneles[this.jList1.getSelectedIndex()].setVisible(true);
+    }//GEN-LAST:event_jList1ValueChanged
 
     /**
      * @param args the command line arguments
