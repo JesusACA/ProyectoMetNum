@@ -6,6 +6,7 @@
 package vistas;
 
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,12 +17,22 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    JPanel [] paneles = new JPanel[2];
+    JPanel [] paneles;
+    int [][] aMult;
+    int [][] bMult;
+    int [][] cMult;
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        paneles[0] = this.pnlMultiplicacion;
-        paneles[1] = this.pnlEliGauss;
+        paneles = new JPanel[this.jPanel1.getComponentCount() - 2];
+        for (int i = 0; i < paneles.length; i++) {
+            paneles[i] = (JPanel) this.jPanel1.getComponent(i+2);
+        }
+        for (int i = 0; i < paneles.length; i++) {
+                if (i != this.jList1.getSelectedIndex()) {
+                    this.paneles[i].setVisible(false);
+                }
+        }
     }
 
     /**
@@ -39,11 +50,35 @@ public class Principal extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         pnlMultiplicacion = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        cbxF1 = new javax.swing.JComboBox<>();
+        cbxC1 = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblMA = new javax.swing.JTable();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        cbxF2 = new javax.swing.JComboBox<>();
+        cbxC2 = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblMB = new javax.swing.JTable();
+        btnMultiplicacion = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblMC = new javax.swing.JTable();
         pnlEliGauss = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        pnlJordan = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        pnlInversa = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        pnlSeidel = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(1040, 630));
 
         jPanel1.setBackground(new java.awt.Color(37, 45, 68));
         jPanel1.setPreferredSize(new java.awt.Dimension(1028, 600));
@@ -52,7 +87,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(254, 254, 254));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Calculadora de matematicas computacionales");
+        jLabel1.setText("Calculadora de metodos numericos computacionales");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 21, 1000, -1));
 
         jList1.setBackground(new java.awt.Color(37, 45, 68));
@@ -76,23 +111,198 @@ public class Principal extends javax.swing.JFrame {
         pnlMultiplicacion.setBackground(new java.awt.Color(37, 45, 68));
         pnlMultiplicacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pnlMultiplicacion.setPreferredSize(new java.awt.Dimension(738, 511));
+        pnlMultiplicacion.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlMultiplicacionComponentShown(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(254, 254, 254));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Multiplicaión de matrices");
+        jLabel2.setText("Multiplicación de matrices");
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Seleccione dimesiones de la primer matriz:");
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Seleccione dimesiones de la segunda matriz:");
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Filas:");
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Columnas:");
+
+        cbxF1.setBackground(new java.awt.Color(37, 45, 68));
+        cbxF1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cbxF1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbxF1.setPreferredSize(new java.awt.Dimension(67, 25));
+        cbxF1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxF1ItemStateChanged(evt);
+            }
+        });
+
+        cbxC1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cbxC1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbxC1.setPreferredSize(new java.awt.Dimension(67, 25));
+        cbxC1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxC1ItemStateChanged(evt);
+            }
+        });
+
+        tblMA.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        tblMA.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tblMA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblMAMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblMA);
+
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Columnas:");
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Filas:");
+
+        cbxF2.setBackground(new java.awt.Color(37, 45, 68));
+        cbxF2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cbxF2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbxF2.setPreferredSize(new java.awt.Dimension(67, 25));
+        cbxF2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxF2ItemStateChanged(evt);
+            }
+        });
+
+        cbxC2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        cbxC2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbxC2.setPreferredSize(new java.awt.Dimension(67, 25));
+        cbxC2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxC2ItemStateChanged(evt);
+            }
+        });
+
+        tblMB.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        tblMB.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane3.setViewportView(tblMB);
+
+        btnMultiplicacion.setText("Realizar operación");
+        btnMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicacionActionPerformed(evt);
+            }
+        });
+
+        tblMC.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        tblMC.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(tblMC);
 
         javax.swing.GroupLayout pnlMultiplicacionLayout = new javax.swing.GroupLayout(pnlMultiplicacion);
         pnlMultiplicacion.setLayout(pnlMultiplicacionLayout);
         pnlMultiplicacionLayout.setHorizontalGroup(
             pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(pnlMultiplicacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlMultiplicacionLayout.createSequentialGroup()
+                        .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(cbxF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxC1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(btnMultiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMultiplicacionLayout.createSequentialGroup()
+                            .addComponent(jLabel12)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel11)))
+                    .addGroup(pnlMultiplicacionLayout.createSequentialGroup()
+                        .addComponent(cbxF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(149, 149, 149)
+                        .addComponent(cbxC2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMultiplicacionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(244, 244, 244))
         );
         pnlMultiplicacionLayout.setVerticalGroup(
             pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMultiplicacionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbxF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxC2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMultiplicacionLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlMultiplicacionLayout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(btnMultiplicacion)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -123,6 +333,82 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(pnlEliGauss, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
 
+        pnlJordan.setBackground(new java.awt.Color(37, 45, 68));
+        pnlJordan.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlJordan.setPreferredSize(new java.awt.Dimension(738, 511));
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Gauss Jordan");
+        jLabel6.setToolTipText("");
+
+        javax.swing.GroupLayout pnlJordanLayout = new javax.swing.GroupLayout(pnlJordan);
+        pnlJordan.setLayout(pnlJordanLayout);
+        pnlJordanLayout.setHorizontalGroup(
+            pnlJordanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+        );
+        pnlJordanLayout.setVerticalGroup(
+            pnlJordanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlJordanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addContainerGap(464, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pnlJordan, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
+
+        pnlInversa.setBackground(new java.awt.Color(37, 45, 68));
+        pnlInversa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlInversa.setPreferredSize(new java.awt.Dimension(738, 511));
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Método de matriz inversa");
+
+        javax.swing.GroupLayout pnlInversaLayout = new javax.swing.GroupLayout(pnlInversa);
+        pnlInversa.setLayout(pnlInversaLayout);
+        pnlInversaLayout.setHorizontalGroup(
+            pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+        );
+        pnlInversaLayout.setVerticalGroup(
+            pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInversaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(464, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pnlInversa, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
+
+        pnlSeidel.setBackground(new java.awt.Color(37, 45, 68));
+        pnlSeidel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlSeidel.setPreferredSize(new java.awt.Dimension(738, 511));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Gauss Seidel");
+
+        javax.swing.GroupLayout pnlSeidelLayout = new javax.swing.GroupLayout(pnlSeidel);
+        pnlSeidel.setLayout(pnlSeidelLayout);
+        pnlSeidelLayout.setHorizontalGroup(
+            pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+        );
+        pnlSeidelLayout.setVerticalGroup(
+            pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSeidelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addContainerGap(464, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pnlSeidel, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,13 +426,188 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
-        for (int i = 0; i < paneles.length; i++) {
-            if (i != this.jList1.getSelectedIndex()) {
-                this.paneles[i].setVisible(false);
+        if (this.jList1.getSelectedIndex() >= 0 && this.jList1.getSelectedIndex() < paneles.length) {
+            for (int i = 0; i < paneles.length; i++) {
+                if (i != this.jList1.getSelectedIndex()) {
+                    this.paneles[i].setVisible(false);
+                }
+            }
+            paneles[this.jList1.getSelectedIndex()].setVisible(true);    
+        }
+    }//GEN-LAST:event_jList1ValueChanged
+
+    private void cbxF1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxF1ItemStateChanged
+        DefaultTableModel modelo = (DefaultTableModel) this.tblMA.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblMA.setModel(modelo);DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
+        
+        modelo3.setColumnCount(0);
+        modelo3.setRowCount(0);
+        
+        if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
+            for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
+                modelo3.addRow(new Object[]{0});
+            }
+            for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
+                modelo3.addColumn("");
+            }
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(true);
+        }else{
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbxF1ItemStateChanged
+
+    private void pnlMultiplicacionComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlMultiplicacionComponentShown
+        DefaultTableModel modelo1 = (DefaultTableModel) this.tblMA.getModel();
+        modelo1.setRowCount(0);
+        modelo1.setColumnCount(0);
+        for (int i = 0; i <= this.cbxC1.getSelectedIndex(); i++) {
+            modelo1.addColumn("");
+        }
+        for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
+            modelo1.addRow(new Object[]{0});
+        }
+        this.tblMA.setModel(modelo1);
+        DefaultTableModel modelo2 = (DefaultTableModel) this.tblMB.getModel();
+        modelo2.setRowCount(0);
+        modelo2.setColumnCount(0);
+        for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
+            modelo2.addColumn("");
+        }
+        for (int i = 0; i <= this.cbxF2.getSelectedIndex(); i++) {
+            modelo2.addRow(new Object[]{0});
+        }
+        this.tblMB.setModel(modelo2);
+        
+        DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
+        
+        modelo3.setColumnCount(0);
+        modelo3.setRowCount(0);
+        
+        if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
+            for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
+                modelo3.addRow(new Object[]{0});
+            }
+            for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
+                modelo3.addColumn("");
+            }
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(true);
+        }else{
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(false);
+        }
+    }//GEN-LAST:event_pnlMultiplicacionComponentShown
+
+    private void cbxC1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxC1ItemStateChanged
+        DefaultTableModel modelo = (DefaultTableModel) this.tblMA.getModel();
+        modelo.setColumnCount(0);
+        for (int i = 0; i <= this.cbxC1.getSelectedIndex(); i++) {
+            modelo.addColumn("");
+        }
+        this.tblMA.setModel(modelo);
+        
+        DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
+        
+        modelo3.setColumnCount(0);
+        modelo3.setRowCount(0);
+        
+        if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
+            for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
+                modelo3.addRow(new Object[]{0});
+            }
+            for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
+                modelo3.addColumn("");
+            }
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(true);
+        }else{
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbxC1ItemStateChanged
+
+    private void cbxF2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxF2ItemStateChanged
+        DefaultTableModel modelo = (DefaultTableModel) this.tblMB.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i <= this.cbxF2.getSelectedIndex(); i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblMB.setModel(modelo);
+        
+        DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
+        
+        modelo3.setColumnCount(0);
+        modelo3.setRowCount(0);
+        
+        if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
+            for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
+                modelo3.addRow(new Object[]{0});
+            }
+            for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
+                modelo3.addColumn("");
+            }
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(true);
+        }else{
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbxF2ItemStateChanged
+
+    private void cbxC2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxC2ItemStateChanged
+        DefaultTableModel modelo = (DefaultTableModel) this.tblMB.getModel();
+        modelo.setColumnCount(0);
+        for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
+            modelo.addColumn("");
+        }
+        this.tblMB.setModel(modelo);
+        
+        DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
+        
+        modelo3.setColumnCount(0);
+        modelo3.setRowCount(0);
+        
+        if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
+            for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
+                modelo3.addRow(new Object[]{0});
+            }
+            for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
+                modelo3.addColumn("");
+            }
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(true);
+        }else{
+            this.tblMC.setModel(modelo3);
+            this.btnMultiplicacion.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbxC2ItemStateChanged
+
+    private void btnMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacionActionPerformed
+        this.aMult = new int [this.cbxF1.getSelectedIndex()+1][this.cbxC1.getSelectedIndex()+1];
+        this.bMult = new int [this.cbxF2.getSelectedIndex()+1][this.cbxC2.getSelectedIndex()+1];
+        this.cMult = new int [this.cbxF1.getSelectedIndex()+1][this.cbxC2.getSelectedIndex()+1];
+        for (int i = 0; i < this.cbxF1.getSelectedIndex()+1; i++) {
+            for (int j = 0; j < this.cbxC1.getSelectedIndex()+1; j++) {
+               this.aMult[i][j] = Integer.parseInt(this.tblMA.getValueAt(i, j).toString());
             }
         }
-        paneles[this.jList1.getSelectedIndex()].setVisible(true);
-    }//GEN-LAST:event_jList1ValueChanged
+        for (int i = 0; i < this.cbxF2.getSelectedIndex()+1; i++) {
+            for (int j = 0; j < this.cbxC2.getSelectedIndex()+1; j++) {
+                this.bMult[i][j] = Integer.parseInt(this.tblMB.getValueAt(i, j).toString());
+            }
+        }
+        System.out.println(aMult[0][0] +"\n"+ bMult[0][0]);
+    }//GEN-LAST:event_btnMultiplicacionActionPerformed
+
+    private void tblMAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMAMouseClicked
+        System.out.println(this.tblMA.getValueAt(0, 0));
+    }//GEN-LAST:event_tblMAMouseClicked
 
     /**
      * @param args the command line arguments
@@ -159,7 +620,7 @@ public class Principal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -184,13 +645,37 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMultiplicacion;
+    private javax.swing.JComboBox<String> cbxC1;
+    private javax.swing.JComboBox<String> cbxC2;
+    private javax.swing.JComboBox<String> cbxF1;
+    private javax.swing.JComboBox<String> cbxF2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel pnlEliGauss;
+    private javax.swing.JPanel pnlInversa;
+    private javax.swing.JPanel pnlJordan;
     private javax.swing.JPanel pnlMultiplicacion;
+    private javax.swing.JPanel pnlSeidel;
+    private javax.swing.JTable tblMA;
+    private javax.swing.JTable tblMB;
+    private javax.swing.JTable tblMC;
     // End of variables declaration//GEN-END:variables
 }
