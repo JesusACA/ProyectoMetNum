@@ -5,7 +5,9 @@
  */
 package vistas;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,21 +19,22 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    JPanel [] paneles;
-    int [][] aMult;
-    int [][] bMult;
-    int [][] cMult;
+    JPanel[] paneles;
+    int[][] aMult;
+    int[][] bMult;
+    int[][] cMult;
+
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
         paneles = new JPanel[this.jPanel1.getComponentCount() - 2];
         for (int i = 0; i < paneles.length; i++) {
-            paneles[i] = (JPanel) this.jPanel1.getComponent(i+2);
+            paneles[i] = (JPanel) this.jPanel1.getComponent(i + 2);
         }
         for (int i = 0; i < paneles.length; i++) {
-                if (i != this.jList1.getSelectedIndex()) {
-                    this.paneles[i].setVisible(false);
-                }
+            if (i != this.jList1.getSelectedIndex()) {
+                this.paneles[i].setVisible(false);
+            }
         }
     }
 
@@ -70,6 +73,21 @@ public class Principal extends javax.swing.JFrame {
         tblMC = new javax.swing.JTable();
         pnlEliGauss = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel13 = new javax.swing.JLabel();
+        cbxEliNE = new javax.swing.JComboBox<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblEliE = new javax.swing.JTable();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblEliB = new javax.swing.JTable();
+        btnComprobacionEliGaus = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblEcuaciones = new javax.swing.JTable();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        btnRealizarEliGaus = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblResultados = new javax.swing.JTable();
         pnlJordan = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         pnlInversa = new javax.swing.JPanel();
@@ -140,7 +158,7 @@ public class Principal extends javax.swing.JFrame {
 
         cbxF1.setBackground(new java.awt.Color(37, 45, 68));
         cbxF1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        cbxF1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbxF1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
         cbxF1.setPreferredSize(new java.awt.Dimension(67, 25));
         cbxF1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -149,7 +167,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         cbxC1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        cbxC1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbxC1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
         cbxC1.setPreferredSize(new java.awt.Dimension(67, 25));
         cbxC1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -166,9 +184,10 @@ public class Principal extends javax.swing.JFrame {
 
             }
         ));
-        tblMA.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblMAMouseClicked(evt);
+        tblMA.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblMA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tblMAKeyTyped(evt);
             }
         });
         jScrollPane2.setViewportView(tblMA);
@@ -183,7 +202,7 @@ public class Principal extends javax.swing.JFrame {
 
         cbxF2.setBackground(new java.awt.Color(37, 45, 68));
         cbxF2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        cbxF2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbxF2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
         cbxF2.setPreferredSize(new java.awt.Dimension(67, 25));
         cbxF2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -192,7 +211,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         cbxC2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        cbxC2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbxC2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
         cbxC2.setPreferredSize(new java.awt.Dimension(67, 25));
         cbxC2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -209,6 +228,12 @@ public class Principal extends javax.swing.JFrame {
 
             }
         ));
+        tblMB.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblMB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tblMBKeyTyped(evt);
+            }
+        });
         jScrollPane3.setViewportView(tblMB);
 
         btnMultiplicacion.setText("Realizar operación");
@@ -227,6 +252,7 @@ public class Principal extends javax.swing.JFrame {
 
             }
         ));
+        tblMC.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane4.setViewportView(tblMC);
 
         javax.swing.GroupLayout pnlMultiplicacionLayout = new javax.swing.GroupLayout(pnlMultiplicacion);
@@ -277,7 +303,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlMultiplicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -311,24 +337,167 @@ public class Principal extends javax.swing.JFrame {
         pnlEliGauss.setBackground(new java.awt.Color(37, 45, 68));
         pnlEliGauss.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pnlEliGauss.setPreferredSize(new java.awt.Dimension(738, 511));
+        pnlEliGauss.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlEliGaussComponentShown(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Eliminación de Gauss");
 
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Cantidad de ecuaciones:");
+
+        cbxEliNE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3" }));
+        cbxEliNE.setPreferredSize(new java.awt.Dimension(208, 20));
+        cbxEliNE.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxEliNEItemStateChanged(evt);
+            }
+        });
+
+        tblEliE.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane5.setViewportView(tblEliE);
+
+        tblEliB.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "B"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(tblEliB);
+
+        btnComprobacionEliGaus.setText("Comprobar ecuaciones");
+        btnComprobacionEliGaus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprobacionEliGausActionPerformed(evt);
+            }
+        });
+
+        tblEcuaciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Ecuaciones"
+            }
+        ));
+        jScrollPane8.setViewportView(tblEcuaciones);
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Matriz resultante:");
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Favor de escribir los 0");
+
+        btnRealizarEliGaus.setText("Realizar operación");
+        btnRealizarEliGaus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarEliGausActionPerformed(evt);
+            }
+        });
+
+        tblResultados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null}
+            },
+            new String [] {
+                "x"
+            }
+        ));
+        jScrollPane7.setViewportView(tblResultados);
+
         javax.swing.GroupLayout pnlEliGaussLayout = new javax.swing.GroupLayout(pnlEliGauss);
         pnlEliGauss.setLayout(pnlEliGaussLayout);
         pnlEliGaussLayout.setHorizontalGroup(
             pnlEliGaussLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEliGaussLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlEliGaussLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlEliGaussLayout.createSequentialGroup()
+                        .addGroup(pnlEliGaussLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbxEliNE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlEliGaussLayout.createSequentialGroup()
+                        .addGroup(pnlEliGaussLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlEliGaussLayout.createSequentialGroup()
+                                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(260, 260, 260))
+                            .addGroup(pnlEliGaussLayout.createSequentialGroup()
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                                .addComponent(btnComprobacionEliGaus)
+                                .addGap(54, 54, 54)))
+                        .addGroup(pnlEliGaussLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnRealizarEliGaus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+            .addGroup(pnlEliGaussLayout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlEliGaussLayout.setVerticalGroup(
             pnlEliGaussLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEliGaussLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(462, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbxEliNE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEliGaussLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlEliGaussLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlEliGaussLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEliGaussLayout.createSequentialGroup()
+                                .addComponent(btnComprobacionEliGaus)
+                                .addGap(42, 42, 42))))
+                    .addGroup(pnlEliGaussLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnRealizarEliGaus)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(354, Short.MAX_VALUE))
         );
 
         jPanel1.add(pnlEliGauss, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
@@ -432,7 +601,7 @@ public class Principal extends javax.swing.JFrame {
                     this.paneles[i].setVisible(false);
                 }
             }
-            paneles[this.jList1.getSelectedIndex()].setVisible(true);    
+            paneles[this.jList1.getSelectedIndex()].setVisible(true);
         }
     }//GEN-LAST:event_jList1ValueChanged
 
@@ -440,13 +609,14 @@ public class Principal extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) this.tblMA.getModel();
         modelo.setRowCount(0);
         for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
-            modelo.addRow(new Object[]{0});
+            modelo.addRow(new Object[]{});
         }
-        this.tblMA.setModel(modelo);DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
-        
+        this.tblMA.setModel(modelo);
+        DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
+
         modelo3.setColumnCount(0);
         modelo3.setRowCount(0);
-        
+
         if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
             for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
                 modelo3.addRow(new Object[]{0});
@@ -456,9 +626,14 @@ public class Principal extends javax.swing.JFrame {
             }
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(true);
-        }else{
+        } else {
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(false);
+        }
+        for (int i = 0; i < this.tblMA.getRowCount(); i++) {
+            for (int j = 0; j < this.tblMA.getColumnCount(); j++) {
+                tblMA.setValueAt(0, i, j);
+            }
         }
     }//GEN-LAST:event_cbxF1ItemStateChanged
 
@@ -470,7 +645,7 @@ public class Principal extends javax.swing.JFrame {
             modelo1.addColumn("");
         }
         for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
-            modelo1.addRow(new Object[]{0});
+            modelo1.addRow(new Object[]{});
         }
         this.tblMA.setModel(modelo1);
         DefaultTableModel modelo2 = (DefaultTableModel) this.tblMB.getModel();
@@ -480,27 +655,37 @@ public class Principal extends javax.swing.JFrame {
             modelo2.addColumn("");
         }
         for (int i = 0; i <= this.cbxF2.getSelectedIndex(); i++) {
-            modelo2.addRow(new Object[]{0});
+            modelo2.addRow(new Object[]{});
         }
         this.tblMB.setModel(modelo2);
-        
+
         DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
-        
+
         modelo3.setColumnCount(0);
         modelo3.setRowCount(0);
-        
+
         if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
             for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
-                modelo3.addRow(new Object[]{0});
+                modelo3.addRow(new Object[]{});
             }
             for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
                 modelo3.addColumn("");
             }
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(true);
-        }else{
+        } else {
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(false);
+        }
+        for (int i = 0; i < this.tblMA.getRowCount(); i++) {
+            for (int j = 0; j < this.tblMA.getColumnCount(); j++) {
+                tblMA.setValueAt(0, i, j);
+            }
+        }
+        for (int i = 0; i < this.tblMB.getRowCount(); i++) {
+            for (int j = 0; j < this.tblMB.getColumnCount(); j++) {
+                tblMB.setValueAt(0, i, j);
+            }
         }
     }//GEN-LAST:event_pnlMultiplicacionComponentShown
 
@@ -511,24 +696,29 @@ public class Principal extends javax.swing.JFrame {
             modelo.addColumn("");
         }
         this.tblMA.setModel(modelo);
-        
+
         DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
-        
+
         modelo3.setColumnCount(0);
         modelo3.setRowCount(0);
-        
+
         if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
             for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
-                modelo3.addRow(new Object[]{0});
+                modelo3.addRow(new Object[]{});
             }
             for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
                 modelo3.addColumn("");
             }
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(true);
-        }else{
+        } else {
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(false);
+        }
+        for (int i = 0; i < this.tblMA.getRowCount(); i++) {
+            for (int j = 0; j < this.tblMA.getColumnCount(); j++) {
+                tblMA.setValueAt(0, i, j);
+            }
         }
     }//GEN-LAST:event_cbxC1ItemStateChanged
 
@@ -536,27 +726,32 @@ public class Principal extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) this.tblMB.getModel();
         modelo.setRowCount(0);
         for (int i = 0; i <= this.cbxF2.getSelectedIndex(); i++) {
-            modelo.addRow(new Object[]{0});
+            modelo.addRow(new Object[]{});
         }
         this.tblMB.setModel(modelo);
-        
+
         DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
-        
+
         modelo3.setColumnCount(0);
         modelo3.setRowCount(0);
-        
+
         if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
             for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
-                modelo3.addRow(new Object[]{0});
+                modelo3.addRow(new Object[]{});
             }
             for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
                 modelo3.addColumn("");
             }
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(true);
-        }else{
+        } else {
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(false);
+        }
+        for (int i = 0; i < this.tblMB.getRowCount(); i++) {
+            for (int j = 0; j < this.tblMB.getColumnCount(); j++) {
+                tblMB.setValueAt(0, i, j);
+            }
         }
     }//GEN-LAST:event_cbxF2ItemStateChanged
 
@@ -567,47 +762,277 @@ public class Principal extends javax.swing.JFrame {
             modelo.addColumn("");
         }
         this.tblMB.setModel(modelo);
-        
+
         DefaultTableModel modelo3 = (DefaultTableModel) this.tblMC.getModel();
-        
+
         modelo3.setColumnCount(0);
         modelo3.setRowCount(0);
-        
+
         if (Integer.parseInt(cbxC1.getSelectedItem().toString()) == Integer.parseInt(cbxF2.getSelectedItem().toString())) {
             for (int i = 0; i <= this.cbxF1.getSelectedIndex(); i++) {
-                modelo3.addRow(new Object[]{0});
+                modelo3.addRow(new Object[]{});
             }
             for (int i = 0; i <= this.cbxC2.getSelectedIndex(); i++) {
                 modelo3.addColumn("");
             }
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(true);
-        }else{
+        } else {
             this.tblMC.setModel(modelo3);
             this.btnMultiplicacion.setEnabled(false);
+        }
+        for (int i = 0; i < this.tblMB.getRowCount(); i++) {
+            for (int j = 0; j < this.tblMB.getColumnCount(); j++) {
+                tblMB.setValueAt(0, i, j);
+            }
         }
     }//GEN-LAST:event_cbxC2ItemStateChanged
 
     private void btnMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacionActionPerformed
-        this.aMult = new int [this.cbxF1.getSelectedIndex()+1][this.cbxC1.getSelectedIndex()+1];
-        this.bMult = new int [this.cbxF2.getSelectedIndex()+1][this.cbxC2.getSelectedIndex()+1];
-        this.cMult = new int [this.cbxF1.getSelectedIndex()+1][this.cbxC2.getSelectedIndex()+1];
-        for (int i = 0; i < this.cbxF1.getSelectedIndex()+1; i++) {
-            for (int j = 0; j < this.cbxC1.getSelectedIndex()+1; j++) {
-               this.aMult[i][j] = Integer.parseInt(this.tblMA.getValueAt(i, j).toString());
+        if (!(this.tblMA.isEditing() || this.tblMB.isEditing())) {
+            this.aMult = new int[this.cbxF1.getSelectedIndex() + 1][this.cbxC1.getSelectedIndex() + 1];
+            this.bMult = new int[this.cbxF2.getSelectedIndex() + 1][this.cbxC2.getSelectedIndex() + 1];
+            this.cMult = new int[this.cbxF1.getSelectedIndex() + 1][this.cbxC2.getSelectedIndex() + 1];
+            for (int i = 0; i < this.cbxF1.getSelectedIndex() + 1; i++) {
+                for (int j = 0; j < this.cbxC1.getSelectedIndex() + 1; j++) {
+                    this.aMult[i][j] = Integer.parseInt(this.tblMA.getValueAt(i, j).toString());
+                }
             }
-        }
-        for (int i = 0; i < this.cbxF2.getSelectedIndex()+1; i++) {
-            for (int j = 0; j < this.cbxC2.getSelectedIndex()+1; j++) {
-                this.bMult[i][j] = Integer.parseInt(this.tblMB.getValueAt(i, j).toString());
+            for (int i = 0; i < this.cbxF2.getSelectedIndex() + 1; i++) {
+                for (int j = 0; j < this.cbxC2.getSelectedIndex() + 1; j++) {
+                    this.bMult[i][j] = Integer.parseInt(this.tblMB.getValueAt(i, j).toString());
+                }
             }
+            for (int i = 0; i < this.cbxF1.getSelectedIndex() + 1; i++) {
+                for (int j = 0; j < this.cbxC2.getSelectedIndex() + 1; j++) {
+                    cMult[i][j] = 0;
+                    for (int k = 0; k < this.cbxC1.getSelectedIndex() + 1; k++) {
+                        cMult[i][j] += aMult[i][k] * bMult[k][j];
+                    }
+                }
+            }
+            for (int i = 0; i < this.cbxF1.getSelectedIndex() + 1; i++) {
+                for (int j = 0; j < this.cbxC2.getSelectedIndex() + 1; j++) {
+                    this.tblMC.setValueAt(cMult[i][j], i, j);
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Está siendo editada la tabla, por favor presione enter", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-        System.out.println(aMult[0][0] +"\n"+ bMult[0][0]);
+
     }//GEN-LAST:event_btnMultiplicacionActionPerformed
 
-    private void tblMAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMAMouseClicked
-        System.out.println(this.tblMA.getValueAt(0, 0));
-    }//GEN-LAST:event_tblMAMouseClicked
+    private void tblMAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblMAKeyTyped
+        if (this.tblMA.isEditing() || this.tblMB.isEditing()) {
+            this.btnMultiplicacion.setEnabled(false);
+        } else {
+            this.btnMultiplicacion.setEnabled(true);
+        }
+    }//GEN-LAST:event_tblMAKeyTyped
+
+    private void tblMBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblMBKeyTyped
+        if (this.tblMA.isEditing() || this.tblMB.isEditing()) {
+            this.btnMultiplicacion.setEnabled(false);
+        } else {
+            this.btnMultiplicacion.setEnabled(true);
+        }
+    }//GEN-LAST:event_tblMBKeyTyped
+
+    private void pnlEliGaussComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlEliGaussComponentShown
+        int valor = Integer.parseInt(this.cbxEliNE.getSelectedItem().toString());
+        DefaultTableModel modelo = (DefaultTableModel) this.tblEliE.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblEliE.setModel(modelo);
+        modelo = (DefaultTableModel) this.tblEliB.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        for (int i = 0; i < this.tblEliE.getRowCount(); i++) {
+            for (int j = 0; j < this.tblEliE.getColumnCount(); j++) {
+                this.tblEliE.setValueAt(0, i, j);
+            }
+        }
+        modelo = (DefaultTableModel) this.tblEcuaciones.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblEcuaciones.setModel(modelo);
+        
+        modelo = (DefaultTableModel) this.tblResultados.getModel();
+        modelo.setRowCount(0);
+        modelo.setColumnCount(0);
+        for (int i = 0; i < valor; i++) {
+            int letra = i+120;
+            modelo.addColumn((char)letra);
+        }
+        modelo.addColumn("Determinante");
+        modelo.addRow(new Object[]{});
+        this.tblResultados.setModel(modelo);
+        
+    }//GEN-LAST:event_pnlEliGaussComponentShown
+
+    private void cbxEliNEItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxEliNEItemStateChanged
+        int valor = Integer.parseInt(this.cbxEliNE.getSelectedItem().toString());
+        DefaultTableModel modelo = (DefaultTableModel) this.tblEliE.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblEliE.setModel(modelo);
+        modelo = (DefaultTableModel) this.tblEliB.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        for (int i = 0; i < this.tblEliE.getRowCount(); i++) {
+            for (int j = 0; j < this.tblEliE.getColumnCount(); j++) {
+                this.tblEliE.setValueAt(0, i, j);
+            }
+        }
+        modelo = (DefaultTableModel) this.tblEcuaciones.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblEcuaciones.setModel(modelo);
+        
+        modelo = (DefaultTableModel) this.tblResultados.getModel();
+        modelo.setRowCount(0);
+        modelo.setColumnCount(0);
+        for (int i = 0; i < valor; i++) {
+            int letra = i+120;
+            modelo.addColumn((char)letra);
+        }
+        modelo.addColumn("Determinante");
+        modelo.addRow(new Object[]{});
+        this.tblResultados.setModel(modelo);
+    }//GEN-LAST:event_cbxEliNEItemStateChanged
+
+    private void btnComprobacionEliGausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobacionEliGausActionPerformed
+        if (this.tblEcuaciones.isEditing()) {
+            JOptionPane.showMessageDialog(this.btnComprobacionEliGaus, "Está siendo editada la tabla de las ecuaciones", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            hacerMatriz(this.tblEcuaciones, this.tblEliE, this.tblEliB);
+        }
+    }//GEN-LAST:event_btnComprobacionEliGausActionPerformed
+
+    private void btnRealizarEliGausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarEliGausActionPerformed
+        int valor =  Integer.parseInt(this.cbxEliNE.getSelectedItem().toString());
+        int n = valor - 1;
+        double [][] a = new double[valor][valor];
+        double [] b = new double[valor];
+        double [] x = new double[n + 1];
+        for (int i = 0; i < valor; i++) {
+            for (int j = 0; j < valor; j++) {
+                a[i][j] = Double.parseDouble(this.tblEliE.getValueAt(i, j).toString());
+            }
+        }
+        for (int i = 0; i < valor; i++) {
+            b[i] = Double.parseDouble(this.tblEliB.getValueAt(i, 0).toString());
+        }
+        int det = 1;
+        for (int i = 0; i <= n - 1; i++) {
+            det *= a[i][i];
+            if (det == 0) {
+                JOptionPane.showMessageDialog(this.tblResultados, "Hay un cero en la diagonal", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                for (int k = i + 1; k <= n; k++) {
+                    for (int j = i + 1; j <= n; j++) {
+                        a[k][j] = a[k][j] - a[k][i] * a[i][j]/a[i][i];
+                    }
+                    b[k] = b[k] - a[k][i] * b[i]/a[i][i];
+                }
+            }
+        }
+        det *= a[n][n];
+        if (det == 0) {
+            JOptionPane.showMessageDialog(this.tblResultados, "Hay un cero en la diagonal", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            x[n] = b[n]/a[n][n];
+            for (int i = n-1; i >= 0; i--) {
+                x[i] = b[i];
+                for (int j = i + 1; j <= n; j++) {
+                    x[i] -= a[i][j]*x[j];
+                }
+                x[i] /= a[i][i]; 
+            }
+        }
+        for (int i = 0; i < x.length; i++) {
+            this.tblResultados.setValueAt(x[i], 0, i);
+        }
+        this.tblResultados.setValueAt(det, 0, this.tblResultados.getColumnCount() - 1);
+    }//GEN-LAST:event_btnRealizarEliGausActionPerformed
+
+    public void hacerMatriz(JTable tablaEntrada, JTable tablaObjetivoMatriz, JTable tablaObjetivoVector) {
+        String[] cadenaPositiva;
+        String[] sobrante;
+        int cantidad = Integer.parseInt(this.cbxEliNE.getSelectedItem().toString());
+        double enteros[][];
+        double vector[];
+        enteros = new double[cantidad][cantidad];
+        vector = new double[cantidad];
+        cadenaPositiva = new String[cantidad];
+        for (int h = 0; h < cantidad; h++) {
+            sobrante = tablaEntrada.getValueAt(h, 0).toString().split("=");
+            sobrante[1] = sobrante[1].trim();
+            vector[h] = Double.parseDouble(sobrante[1]);
+            if (tablaEntrada.getValueAt(h, 0).toString().charAt(0) == '-') {
+                cadenaPositiva[0] = sobrante[0].replace("-", "+-").replace('+', 't').split("t")[1];
+                sobrante[0] = sobrante[0].replace(cadenaPositiva[0], "");
+                for (int i = 1; i < cadenaPositiva.length; i++) {
+                    cadenaPositiva[i] = sobrante[0].replace("-", "+-").replace('+', 't').split("t")[i];
+                }
+            } else {
+                cadenaPositiva = sobrante[0].replace("-", "+-").replace('+', 't').split("t");
+            }
+            for (int i = 0; i < cadenaPositiva.length; i++) {
+                cadenaPositiva[i] = cadenaPositiva[i].trim();
+                cadenaPositiva[i] = cadenaPositiva[i].replaceAll("[a-z]|[A-Z]", "#1");
+            }
+            for (int i = 0; i < cadenaPositiva.length; i++) {
+                if (cadenaPositiva[i].charAt(0) == '-' && cadenaPositiva[i].charAt(1) == '#') {
+                    cadenaPositiva[i] = cadenaPositiva[i].replace("-", "-1");
+                }
+                if (cadenaPositiva[i].charAt(0) == '#') {
+                    cadenaPositiva[i] = cadenaPositiva[i].replace("#", "1#");
+                }
+
+            }
+            for (int i = 0; i < cantidad; i++) {
+                double a, b;
+                a = Double.parseDouble(cadenaPositiva[i].split("#")[0]);
+                if (cadenaPositiva[i].split("#").length > 1) {
+                    b = Double.parseDouble(cadenaPositiva[i].split("#")[1]);
+                } else {
+                    b = 0;
+                }
+                enteros[h][i] = a * b;
+            }
+        }
+        for (int i = 0; i < cantidad; i++) {
+            for (int j = 0; j < cantidad; j++) {
+                tablaObjetivoMatriz.setValueAt(enteros[i][j], i, j);
+            }
+        }
+        for (int i = 0; i < cantidad; i++) {
+            tablaObjetivoVector.setValueAt(vector[i], i, 0);
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -645,15 +1070,21 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnComprobacionEliGaus;
     private javax.swing.JButton btnMultiplicacion;
+    private javax.swing.JButton btnRealizarEliGaus;
     private javax.swing.JComboBox<String> cbxC1;
     private javax.swing.JComboBox<String> cbxC2;
+    private javax.swing.JComboBox<String> cbxEliNE;
     private javax.swing.JComboBox<String> cbxF1;
     private javax.swing.JComboBox<String> cbxF2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -668,14 +1099,23 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel pnlEliGauss;
     private javax.swing.JPanel pnlInversa;
     private javax.swing.JPanel pnlJordan;
     private javax.swing.JPanel pnlMultiplicacion;
     private javax.swing.JPanel pnlSeidel;
+    private javax.swing.JTable tblEcuaciones;
+    private javax.swing.JTable tblEliB;
+    private javax.swing.JTable tblEliE;
     private javax.swing.JTable tblMA;
     private javax.swing.JTable tblMB;
     private javax.swing.JTable tblMC;
+    private javax.swing.JTable tblResultados;
     // End of variables declaration//GEN-END:variables
 }
