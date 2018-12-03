@@ -114,11 +114,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel23 = new javax.swing.JLabel();
-        cbxJordCE1 = new javax.swing.JComboBox<>();
+        cbxInversaCE = new javax.swing.JComboBox<>();
         jScrollPane14 = new javax.swing.JScrollPane();
         tblInversaE = new javax.swing.JTable();
         jScrollPane15 = new javax.swing.JScrollPane();
-        tblIversaB = new javax.swing.JTable();
+        tblInversaB = new javax.swing.JTable();
         btnComprobacionInversa = new javax.swing.JButton();
         jScrollPane16 = new javax.swing.JScrollPane();
         tblEcuacionesInversa = new javax.swing.JTable();
@@ -136,6 +136,23 @@ public class Principal extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         pnlSeidel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel29 = new javax.swing.JLabel();
+        cbxSeidelCE = new javax.swing.JComboBox<>();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        tblSeidelE = new javax.swing.JTable();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        tblSeidelB = new javax.swing.JTable();
+        btnComprobacionSeidel = new javax.swing.JButton();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        tblEcuacionesSeidel = new javax.swing.JTable();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        btnRealizarSeidel = new javax.swing.JButton();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        tblIteraciones = new javax.swing.JTable();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         pnlMinimosCuadrados = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         pnlSecante = new javax.swing.JPanel();
@@ -756,6 +773,11 @@ public class Principal extends javax.swing.JFrame {
         pnlInversa.setBackground(new java.awt.Color(37, 45, 68));
         pnlInversa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pnlInversa.setPreferredSize(new java.awt.Dimension(738, 511));
+        pnlInversa.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlInversaComponentShown(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -766,11 +788,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Cantidad de ecuaciones:");
 
-        cbxJordCE1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3" }));
-        cbxJordCE1.setPreferredSize(new java.awt.Dimension(208, 20));
-        cbxJordCE1.addItemListener(new java.awt.event.ItemListener() {
+        cbxInversaCE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3" }));
+        cbxInversaCE.setPreferredSize(new java.awt.Dimension(208, 20));
+        cbxInversaCE.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbxJordCE1ItemStateChanged(evt);
+                cbxInversaCEItemStateChanged(evt);
             }
         });
 
@@ -784,7 +806,7 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane14.setViewportView(tblInversaE);
 
-        tblIversaB.setModel(new javax.swing.table.DefaultTableModel(
+        tblInversaB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -800,7 +822,7 @@ public class Principal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane15.setViewportView(tblIversaB);
+        jScrollPane15.setViewportView(tblInversaB);
 
         btnComprobacionInversa.setText("Comprobar ecuaciones");
         btnComprobacionInversa.addActionListener(new java.awt.event.ActionListener() {
@@ -895,7 +917,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cbxJordCE1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(cbxInversaCE, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInversaLayout.createSequentialGroup()
@@ -934,7 +956,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel23)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbxJordCE1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbxInversaCE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
@@ -975,24 +997,190 @@ public class Principal extends javax.swing.JFrame {
         pnlSeidel.setBackground(new java.awt.Color(37, 45, 68));
         pnlSeidel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pnlSeidel.setPreferredSize(new java.awt.Dimension(738, 511));
+        pnlSeidel.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlSeidelComponentShown(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Gauss Seidel");
 
+        jLabel29.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("Cantidad de ecuaciones:");
+
+        cbxSeidelCE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3" }));
+        cbxSeidelCE.setPreferredSize(new java.awt.Dimension(208, 20));
+        cbxSeidelCE.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxSeidelCEItemStateChanged(evt);
+            }
+        });
+
+        tblSeidelE.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane20.setViewportView(tblSeidelE);
+
+        tblSeidelB.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "B"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane21.setViewportView(tblSeidelB);
+
+        btnComprobacionSeidel.setText("Comprobar ecuaciones");
+        btnComprobacionSeidel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprobacionSeidelActionPerformed(evt);
+            }
+        });
+
+        tblEcuacionesSeidel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Ecuaciones"
+            }
+        ));
+        jScrollPane22.setViewportView(tblEcuacionesSeidel);
+
+        jLabel30.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("Matriz resultante:");
+
+        jLabel31.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("Favor de escribir los 0");
+
+        btnRealizarSeidel.setText("Realizar operación");
+        btnRealizarSeidel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarSeidelActionPerformed(evt);
+            }
+        });
+
+        tblIteraciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane24.setViewportView(tblIteraciones);
+
+        jLabel32.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("Tabla de iteraciones");
+
+        jLabel34.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("Se manejará un error de 0.01%");
+
         javax.swing.GroupLayout pnlSeidelLayout = new javax.swing.GroupLayout(pnlSeidel);
         pnlSeidel.setLayout(pnlSeidelLayout);
         pnlSeidelLayout.setHorizontalGroup(
             pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+            .addGroup(pnlSeidelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSeidelLayout.createSequentialGroup()
+                        .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlSeidelLayout.createSequentialGroup()
+                                .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbxSeidelCE, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlSeidelLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlSeidelLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel34)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(pnlSeidelLayout.createSequentialGroup()
+                                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlSeidelLayout.createSequentialGroup()
+                                        .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnRealizarSeidel, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(pnlSeidelLayout.createSequentialGroup()
+                                        .addComponent(btnComprobacionSeidel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane24))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)))
+                .addContainerGap())
         );
         pnlSeidelLayout.setVerticalGroup(
             pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSeidelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addContainerGap(464, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel34))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbxSeidelCE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlSeidelLayout.createSequentialGroup()
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlSeidelLayout.createSequentialGroup()
+                        .addComponent(jLabel31)
+                        .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlSeidelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlSeidelLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(btnComprobacionSeidel))))
+                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlSeidelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSeidelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRealizarSeidel))
+                    .addGroup(pnlSeidelLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel32)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel1.add(pnlSeidel, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
@@ -1487,7 +1675,7 @@ public class Principal extends javax.swing.JFrame {
         }
         modelo.addRow(new Object[]{});
         this.tblResultadosJordan.setModel(modelo);
-        
+
         modelo = (DefaultTableModel) this.tblJordanR.getModel();
         modelo.setColumnCount(0);
         modelo.setRowCount(0);
@@ -1513,7 +1701,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnRealizarJordanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarJordanActionPerformed
         int n = Integer.parseInt(this.cbxJordCE.getSelectedItem().toString());
         int flag = 0;
-        double[][] matriz = new double[n][n+1];
+        double[][] matriz = new double[n][n + 1];
         this.llenarMatriz(matriz, n, this.tblJordanE, this.tblJordanB);
         flag = this.reducirMatriz(matriz, n);
         if (flag == 1) {
@@ -1562,7 +1750,7 @@ public class Principal extends javax.swing.JFrame {
         }
         modelo.addRow(new Object[]{});
         this.tblResultadosJordan.setModel(modelo);
-        
+
         modelo = (DefaultTableModel) this.tblJordanR.getModel();
         modelo.setColumnCount(0);
         modelo.setRowCount(0);
@@ -1577,17 +1765,339 @@ public class Principal extends javax.swing.JFrame {
         this.tblJordanR.setModel(modelo);
     }//GEN-LAST:event_pnlJordanComponentShown
 
-    private void cbxJordCE1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxJordCE1ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxJordCE1ItemStateChanged
+    private void cbxInversaCEItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxInversaCEItemStateChanged
+        int valor = Integer.parseInt(this.cbxInversaCE.getSelectedItem().toString());
+        DefaultTableModel modelo = (DefaultTableModel) this.tblInversaE.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblInversaE.setModel(modelo);
+        modelo = (DefaultTableModel) this.tblInversaB.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblInversaB.setModel(modelo);
+        for (int i = 0; i < this.tblInversaE.getRowCount(); i++) {
+            for (int j = 0; j < this.tblInversaE.getColumnCount(); j++) {
+                this.tblInversaE.setValueAt(0, i, j);
+            }
+        }
+        modelo = (DefaultTableModel) this.tblEcuacionesInversa.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblEcuacionesInversa.setModel(modelo);
+
+        modelo = (DefaultTableModel) this.tblResultadosInversa.getModel();
+        modelo.setRowCount(0);
+        modelo.setColumnCount(0);
+        for (int i = 0; i < valor; i++) {
+            int letra = i + 120;
+            modelo.addColumn((char) letra);
+        }
+        modelo.addRow(new Object[]{});
+        this.tblResultadosInversa.setModel(modelo);
+
+        modelo = (DefaultTableModel) this.tblInversaR.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblInversaR.setModel(modelo);
+
+        modelo = (DefaultTableModel) this.tblInversaR2.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblInversaR2.setModel(modelo);
+    }//GEN-LAST:event_cbxInversaCEItemStateChanged
 
     private void btnComprobacionInversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobacionInversaActionPerformed
-        // TODO add your handling code here:
+        if (this.tblEcuacionesInversa.isEditing()) {
+            JOptionPane.showMessageDialog(this.btnComprobacionInversa, "Está siendo editada la tabla de las ecuaciones", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            hacerMatriz(this.tblEcuacionesInversa, this.tblInversaE, this.tblInversaB, this.cbxInversaCE);
+        }
     }//GEN-LAST:event_btnComprobacionInversaActionPerformed
 
     private void btnRealizarInversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarInversaActionPerformed
-        // TODO add your handling code here:
+        int n = Integer.parseInt(this.cbxInversaCE.getSelectedItem().toString());
+        int flag = 0;
+        double[][] matriz = new double[n][n + n];
+        this.llenarMatrizInversa(matriz, n, this.tblInversaE);
+        flag = this.reducirInversa(matriz, n);
+        if (flag == 1) {
+            flag = this.consistencia(matriz, n, flag);
+        }
+        this.imprimirMatrizInversa(matriz, n, flag, this.tblResultadosInversa, this.tblInversaR, this.tblInversaR2);
     }//GEN-LAST:event_btnRealizarInversaActionPerformed
+
+    private void pnlInversaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlInversaComponentShown
+        int valor = Integer.parseInt(this.cbxInversaCE.getSelectedItem().toString());
+        DefaultTableModel modelo = (DefaultTableModel) this.tblInversaE.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblInversaE.setModel(modelo);
+        modelo = (DefaultTableModel) this.tblInversaB.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblInversaB.setModel(modelo);
+        for (int i = 0; i < this.tblInversaE.getRowCount(); i++) {
+            for (int j = 0; j < this.tblInversaE.getColumnCount(); j++) {
+                this.tblInversaE.setValueAt(0, i, j);
+            }
+        }
+        modelo = (DefaultTableModel) this.tblEcuacionesInversa.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblEcuacionesInversa.setModel(modelo);
+
+        modelo = (DefaultTableModel) this.tblResultadosInversa.getModel();
+        modelo.setRowCount(0);
+        modelo.setColumnCount(0);
+        for (int i = 0; i < valor; i++) {
+            int letra = i + 120;
+            modelo.addColumn((char) letra);
+        }
+        modelo.addRow(new Object[]{});
+        this.tblResultadosInversa.setModel(modelo);
+
+        modelo = (DefaultTableModel) this.tblInversaR.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblInversaR.setModel(modelo);
+
+        modelo = (DefaultTableModel) this.tblInversaR2.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblInversaR2.setModel(modelo);
+    }//GEN-LAST:event_pnlInversaComponentShown
+
+    private void cbxSeidelCEItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxSeidelCEItemStateChanged
+        int valor = Integer.parseInt(this.cbxSeidelCE.getSelectedItem().toString());
+        DefaultTableModel modelo = (DefaultTableModel) this.tblSeidelE.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblSeidelE.setModel(modelo);
+        modelo = (DefaultTableModel) this.tblSeidelB.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblSeidelB.setModel(modelo);
+        for (int i = 0; i < this.tblSeidelE.getRowCount(); i++) {
+            for (int j = 0; j < this.tblSeidelE.getColumnCount(); j++) {
+                this.tblSeidelE.setValueAt(0, i, j);
+            }
+        }
+        modelo = (DefaultTableModel) this.tblEcuacionesSeidel.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblEcuacionesSeidel.setModel(modelo);
+
+        modelo = (DefaultTableModel) this.tblIteraciones.getModel();
+        modelo.setRowCount(0);
+        modelo.setColumnCount(0);
+        modelo.addColumn("Iteración");
+        for (int i = 0; i < valor; i++) {
+            int letra = i + 120;
+            modelo.addColumn((char) letra);
+        }
+        this.tblIteraciones.setModel(modelo);
+    }//GEN-LAST:event_cbxSeidelCEItemStateChanged
+
+    private void btnComprobacionSeidelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobacionSeidelActionPerformed
+        if (this.tblEcuacionesSeidel.isEditing()) {
+            JOptionPane.showMessageDialog(this.btnComprobacionSeidel, "Está siendo editada la tabla de las ecuaciones", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            hacerMatriz(this.tblEcuacionesSeidel, this.tblSeidelE, this.tblSeidelB, this.cbxSeidelCE);
+        }
+    }//GEN-LAST:event_btnComprobacionSeidelActionPerformed
+
+    private void btnRealizarSeidelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarSeidelActionPerformed
+        int valor = Integer.parseInt(this.cbxSeidelCE.getSelectedItem().toString());
+        DefaultTableModel modelo = (DefaultTableModel) this.tblIteraciones.getModel();
+        double[][] matrizA = new double[valor][valor];
+        double[] vectorI = new double[valor];
+        modelo.setRowCount(0);
+        
+        for (int i = 0; i < valor; i++) {
+            for (int j = 0; j < valor; j++) {
+                matrizA[i][j] = Double.parseDouble(this.tblSeidelE.getValueAt(i, j).toString());
+            }
+            vectorI[i] = Double.parseDouble(this.tblSeidelB.getValueAt(i, 0).toString());
+        }
+        int n = vectorI.length;
+        double[] x = new double[n];
+        for (int i = 0; i < n; i++) {
+            x[i] = 0;
+        }
+        double[] error_eval = new double[n];
+        for (int i = 0; i < n; i++) {
+            error_eval[i] = 1;
+        }
+
+        for (int i = 0; i < n; i++) {
+            double sum = 0;
+            for (int j = 0; j < n; j++) {
+                if (i != j) {
+                    sum += Math.abs(matrizA[i][j]);
+                }
+            }
+            double check = Math.abs(matrizA[i][i]) - sum;
+            if (check < 0) {
+                JOptionPane.showMessageDialog(null, "La matriz no es diagonalmente dominante", "Warning", JOptionPane.WARNING_MESSAGE);
+                break;
+            }
+        }
+
+        int iteracion = 0;
+        double max = error_eval[0];
+        for (int i = 0; i < error_eval.length; i++) {
+            if (error_eval[i] > max) {
+                max = error_eval[i];
+            }
+        }
+        double[] z = new double[n];
+        for (int i = 0; i < n; i++) {
+            z[i] = 0;
+        }
+
+        while (max > 0.001) {
+            iteracion = iteracion + 1;
+            for (int i = 0; i < n; i++) {
+                double sum = 0;
+                double[] vectorForSum = new double[valor];
+                for (int j = 0; j < valor; j++) {
+                    vectorForSum[j] = 0;
+                }
+                double[] Xtemp = x;
+                for (int j = 0; j < n; j++) {
+                    if (i != j) {
+                        vectorForSum[j] = matrizA[i][j] * Xtemp[j];
+                    }
+                }
+                for (int u = 0; u < vectorForSum.length; u++) {
+                    sum += vectorForSum[u];
+                }
+                x[i] = (vectorI[i] - sum) / matrizA[i][i];
+            }
+            for (int u = 0; u < error_eval.length; u++) {
+                error_eval[u] = Math.sqrt(Math.pow((x[u] - z[u]), 2));
+            }
+            max = error_eval[0];
+            for (int i = 0; i < error_eval.length; i++) {
+                if (error_eval[i] > max) {
+                    max = error_eval[i];
+                }
+            }
+            for (int i = 0; i < n; i++) {
+                z[i] = x[i];
+            }
+            if (valor == 3) {
+                modelo.addRow(new Object[]{iteracion, x[0], x[1], x[2]});
+
+            } else {
+                modelo.addRow(new Object[]{iteracion, x[0], x[1]});
+
+            }
+        }
+    }//GEN-LAST:event_btnRealizarSeidelActionPerformed
+
+    private void pnlSeidelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlSeidelComponentShown
+        int valor = Integer.parseInt(this.cbxSeidelCE.getSelectedItem().toString());
+        DefaultTableModel modelo = (DefaultTableModel) this.tblSeidelE.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblSeidelE.setModel(modelo);
+        modelo = (DefaultTableModel) this.tblSeidelB.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblSeidelB.setModel(modelo);
+        for (int i = 0; i < this.tblSeidelE.getRowCount(); i++) {
+            for (int j = 0; j < this.tblSeidelE.getColumnCount(); j++) {
+                this.tblSeidelE.setValueAt(0, i, j);
+            }
+        }
+        modelo = (DefaultTableModel) this.tblEcuacionesSeidel.getModel();
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{0});
+        }
+        this.tblEcuacionesSeidel.setModel(modelo);
+
+        modelo = (DefaultTableModel) this.tblIteraciones.getModel();
+        modelo.setRowCount(0);
+        modelo.setColumnCount(0);
+        modelo.addColumn("Iteración");
+        for (int i = 0; i < valor; i++) {
+            int letra = i + 120;
+            modelo.addColumn((char) letra);
+        }
+        this.tblIteraciones.setModel(modelo);
+    }//GEN-LAST:event_pnlSeidelComponentShown
 
     public void hacerMatriz(JTable tablaEntrada, JTable tablaObjetivoMatriz, JTable tablaObjetivoVector, JComboBox combo) {
         String[] cadenaPositiva;
@@ -1685,8 +2195,8 @@ public class Principal extends javax.swing.JFrame {
         }
         return flag;
     }
-    
-    public int consistencia(double[][] matriz, int n, int flag){
+
+    public int consistencia(double[][] matriz, int n, int flag) {
         double suma = 0;
         flag = 3;
         for (int i = 0; i < n; i++) {
@@ -1702,14 +2212,14 @@ public class Principal extends javax.swing.JFrame {
         return flag;
     }
 
-    public void imprimirMatriz(double[][] matriz, int n, int flag, JTable tablaResultado, JTable tblMatriz){
+    public void imprimirMatriz(double[][] matriz, int n, int flag, JTable tablaResultado, JTable tblMatriz) {
         if (flag == 2) {
             JOptionPane.showMessageDialog(this.tblJordanR, "La matriz tiene soluciones multiples", "Resultado", JOptionPane.INFORMATION_MESSAGE);
         } else if (flag == 3) {
             JOptionPane.showMessageDialog(this.tblJordanR, "La matriz no tiene solución", "Resultado", JOptionPane.INFORMATION_MESSAGE);
         } else {
             for (int i = 0; i < n; i++) {
-                tablaResultado.setValueAt(matriz[i][n]/matriz[i][i], 0, i);
+                tablaResultado.setValueAt(matriz[i][n] / matriz[i][i], 0, i);
             }
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j <= n; j++) {
@@ -1718,12 +2228,93 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }
-    
+
+    public void llenarMatrizInversa(double[][] matriz, int n, JTable tablaM) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n + n; j++) {
+                if (j >= n) {
+                    matriz[i][j] = 0;
+                } else {
+                    matriz[i][j] = Double.parseDouble(tablaM.getValueAt(i, j).toString());
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            matriz[i][i + n] = 1;
+        }
+    }
+
+    public int reducirInversa(double[][] matriz, int n) {
+        int c = 0, flag = 0;
+        for (int i = 0; i < n; i++) {
+            if (matriz[i][i] == 0) {
+                while (matriz[i + c][i] == 0 && (i + c) < n + n) {
+                    c++;
+                    if ((i + c) == n) {
+                        flag = 1;
+                        break;
+                    }
+                    for (int j = i, k = 0; k < n + n; k++) {
+                        double temp = matriz[j][k];
+                        matriz[j][k] = matriz[j + c][k];
+                        matriz[j + c][k] = temp;
+                    }
+                }
+            }
+            for (int j = 0; j < n; j++) {
+                if (i != j) {
+                    double pro = matriz[j][i] / matriz[i][i];
+                    for (int k = 0; k < n + n; k++) {
+                        matriz[j][k] = matriz[j][k] - (matriz[i][k] * pro);
+                    }
+                }
+            }
+        }
+        return flag;
+    }
+
+    public void imprimirMatrizInversa(double[][] matriz, int n, int flag, JTable tablaResultado, JTable tblMatriz, JTable tblInversa) {
+        double[][] matrizB = new double[1][n];
+        double[][] matrizInversa = new double[n][n];
+        double[][] matrizResultado = new double[1][n];
+        if (flag == 2) {
+            JOptionPane.showMessageDialog(this.tblInversaR, "La matriz tiene soluciones multiples", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        } else if (flag == 3) {
+            JOptionPane.showMessageDialog(this.tblInversaR, "La matriz no tiene solución", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n + n; j++) {
+                    if (j >= n) {
+                        tblInversa.setValueAt(matrizInversa[i][j - n] = matriz[i][j] / matriz[i][i], i, j - n);
+                    } else {
+                        tblMatriz.setValueAt(matriz[i][j], i, j);
+                    }
+                }
+            }
+            for (int i = 0; i < n; i++) {
+                matrizB[0][i] = Double.parseDouble(this.tblInversaB.getValueAt(i, 0).toString());
+            }
+            for (int i = 0; i < 1; i++) {
+                for (int j = 0; j < n; j++) {
+                    matrizResultado[i][j] = 0;
+                    for (int k = 0; k < n; k++) {
+                        matrizResultado[i][j] += matrizB[i][k] * matrizInversa[k][j];
+                    }
+                }
+            }
+            for (int i = 0; i < 1; i++) {
+                for (int j = 0; j < n; j++) {
+                    tablaResultado.setValueAt(matrizResultado[i][j], i, j);
+                }
+            }
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Windows look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -1758,17 +2349,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnComprobacionEliGaus;
     private javax.swing.JButton btnComprobacionInversa;
     private javax.swing.JButton btnComprobacionJordan;
+    private javax.swing.JButton btnComprobacionSeidel;
     private javax.swing.JButton btnMultiplicacion;
     private javax.swing.JButton btnRealizarEliGaus;
     private javax.swing.JButton btnRealizarInversa;
     private javax.swing.JButton btnRealizarJordan;
+    private javax.swing.JButton btnRealizarSeidel;
     private javax.swing.JComboBox<String> cbxC1;
     private javax.swing.JComboBox<String> cbxC2;
     private javax.swing.JComboBox<String> cbxEliNE;
     private javax.swing.JComboBox<String> cbxF1;
     private javax.swing.JComboBox<String> cbxF2;
+    private javax.swing.JComboBox<String> cbxInversaCE;
     private javax.swing.JComboBox<String> cbxJordCE;
-    private javax.swing.JComboBox<String> cbxJordCE1;
+    private javax.swing.JComboBox<String> cbxSeidelCE;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1790,7 +2384,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1811,6 +2410,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -1822,6 +2425,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JPanel pnlEliGauss;
     private javax.swing.JPanel pnlInversa;
     private javax.swing.JPanel pnlJordan;
@@ -1832,12 +2436,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable tblEcuaciones;
     private javax.swing.JTable tblEcuacionesInversa;
     private javax.swing.JTable tblEcuacionesJordan;
+    private javax.swing.JTable tblEcuacionesSeidel;
     private javax.swing.JTable tblEliB;
     private javax.swing.JTable tblEliE;
+    private javax.swing.JTable tblInversaB;
     private javax.swing.JTable tblInversaE;
     private javax.swing.JTable tblInversaR;
     private javax.swing.JTable tblInversaR2;
-    private javax.swing.JTable tblIversaB;
+    private javax.swing.JTable tblIteraciones;
     private javax.swing.JTable tblJordanB;
     private javax.swing.JTable tblJordanE;
     private javax.swing.JTable tblJordanR;
@@ -1847,5 +2453,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable tblResultados;
     private javax.swing.JTable tblResultadosInversa;
     private javax.swing.JTable tblResultadosJordan;
+    private javax.swing.JTable tblSeidelB;
+    private javax.swing.JTable tblSeidelE;
     // End of variables declaration//GEN-END:variables
 }
