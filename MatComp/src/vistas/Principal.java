@@ -155,6 +155,26 @@ public class Principal extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         pnlMinimosCuadrados = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel33 = new javax.swing.JLabel();
+        txtFilasMin = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        txtC1Min = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        txtC1Min1 = new javax.swing.JTextField();
+        btnLlenarMin = new javax.swing.JButton();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        tblMinimos = new javax.swing.JTable();
+        btnOperacionMin = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        lblMMin = new javax.swing.JLabel();
+        lblBMin = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        txtValorBusqueda = new javax.swing.JTextField();
+        btnBusquedaMin = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         pnlSecante = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
 
@@ -1194,18 +1214,152 @@ public class Principal extends javax.swing.JFrame {
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("Método de minimos cuadrados");
 
+        jLabel33.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Cantidad de filas:");
+
+        jLabel36.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("Nombre columna 1:");
+
+        jLabel37.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("Nombre columna 2:");
+
+        btnLlenarMin.setText("Llenar tabla");
+
+        tblMinimos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane23.setViewportView(tblMinimos);
+
+        btnOperacionMin.setText("Realizar operación");
+
+        jLabel35.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Valor de m:");
+
+        jLabel38.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("Valor de b:");
+
+        lblMMin.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblMMin.setForeground(new java.awt.Color(255, 255, 255));
+        lblMMin.setText("M");
+
+        lblBMin.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblBMin.setForeground(new java.awt.Color(255, 255, 255));
+        lblBMin.setText("B");
+
+        jLabel39.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText("Valor de X que desea buscar:");
+
+        btnBusquedaMin.setText("Realizar busqueda");
+
+        jLabel40.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setText("La Y en X es de:");
+
+        jLabel41.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("Y");
+
         javax.swing.GroupLayout pnlMinimosCuadradosLayout = new javax.swing.GroupLayout(pnlMinimosCuadrados);
         pnlMinimosCuadrados.setLayout(pnlMinimosCuadradosLayout);
         pnlMinimosCuadradosLayout.setHorizontalGroup(
             pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+            .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMinimosCuadradosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnLlenarMin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlMinimosCuadradosLayout.createSequentialGroup()
+                            .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtFilasMin))
+                            .addGap(18, 18, 18)
+                            .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel36)
+                                .addComponent(txtC1Min, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtC1Min1))))
+                    .addGroup(pnlMinimosCuadradosLayout.createSequentialGroup()
+                        .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlMinimosCuadradosLayout.createSequentialGroup()
+                                .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel35))
+                                .addGap(26, 26, 26)
+                                .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblMMin)
+                                    .addComponent(lblBMin))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtValorBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBusquedaMin))
+                    .addGroup(pnlMinimosCuadradosLayout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel41)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnOperacionMin, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                    .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         pnlMinimosCuadradosLayout.setVerticalGroup(
             pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMinimosCuadradosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel21)
-                .addContainerGap(464, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMinimosCuadradosLayout.createSequentialGroup()
+                        .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel37))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtC1Min1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtC1Min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFilasMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnLlenarMin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(lblMMin))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel38)
+                            .addComponent(lblBMin))
+                        .addGap(32, 32, 32)
+                        .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel39)
+                            .addComponent(txtValorBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBusquedaMin))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel41)))
+                    .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnOperacionMin)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         jPanel1.add(pnlMinimosCuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
@@ -2346,11 +2500,14 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBusquedaMin;
     private javax.swing.JButton btnComprobacionEliGaus;
     private javax.swing.JButton btnComprobacionInversa;
     private javax.swing.JButton btnComprobacionJordan;
     private javax.swing.JButton btnComprobacionSeidel;
+    private javax.swing.JButton btnLlenarMin;
     private javax.swing.JButton btnMultiplicacion;
+    private javax.swing.JButton btnOperacionMin;
     private javax.swing.JButton btnRealizarEliGaus;
     private javax.swing.JButton btnRealizarInversa;
     private javax.swing.JButton btnRealizarJordan;
@@ -2389,8 +2546,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2413,6 +2578,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2426,6 +2592,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JLabel lblBMin;
+    private javax.swing.JLabel lblMMin;
     private javax.swing.JPanel pnlEliGauss;
     private javax.swing.JPanel pnlInversa;
     private javax.swing.JPanel pnlJordan;
@@ -2450,10 +2619,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable tblMA;
     private javax.swing.JTable tblMB;
     private javax.swing.JTable tblMC;
+    private javax.swing.JTable tblMinimos;
     private javax.swing.JTable tblResultados;
     private javax.swing.JTable tblResultadosInversa;
     private javax.swing.JTable tblResultadosJordan;
     private javax.swing.JTable tblSeidelB;
     private javax.swing.JTable tblSeidelE;
+    private javax.swing.JTextField txtC1Min;
+    private javax.swing.JTextField txtC1Min1;
+    private javax.swing.JTextField txtFilasMin;
+    private javax.swing.JTextField txtValorBusqueda;
     // End of variables declaration//GEN-END:variables
 }
