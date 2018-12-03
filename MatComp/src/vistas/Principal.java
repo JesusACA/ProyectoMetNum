@@ -5,6 +5,7 @@
  */
 package vistas;
 
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -94,7 +95,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         cbxJordCE = new javax.swing.JComboBox<>();
         jScrollPane9 = new javax.swing.JScrollPane();
-        tblJoradanE = new javax.swing.JTable();
+        tblJordanE = new javax.swing.JTable();
         jScrollPane10 = new javax.swing.JScrollPane();
         tblJordanB = new javax.swing.JTable();
         btnComprobacionJordan = new javax.swing.JButton();
@@ -105,10 +106,40 @@ public class Principal extends javax.swing.JFrame {
         btnRealizarJordan = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
         tblResultadosJordan = new javax.swing.JTable();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        tblJordanR = new javax.swing.JTable();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         pnlInversa = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel23 = new javax.swing.JLabel();
+        cbxJordCE1 = new javax.swing.JComboBox<>();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        tblInversaE = new javax.swing.JTable();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        tblIversaB = new javax.swing.JTable();
+        btnComprobacionInversa = new javax.swing.JButton();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        tblEcuacionesInversa = new javax.swing.JTable();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        btnRealizarInversa = new javax.swing.JButton();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        tblResultadosInversa = new javax.swing.JTable();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        tblInversaR = new javax.swing.JTable();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        tblInversaR2 = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
         pnlSeidel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        pnlMinimosCuadrados = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        pnlSecante = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1040, 630));
@@ -128,7 +159,7 @@ public class Principal extends javax.swing.JFrame {
         jList1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jList1.setForeground(new java.awt.Color(254, 254, 254));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Multiplicación de matrices", "Eliminación de Gauss", "Gauss Jordan", "Matriz inversa", "Gauss Seidel" };
+            String[] strings = { "Multiplicación de matrices", "Eliminación de Gauss", "Gauss Jordan", "Matriz inversa", "Gauss Seidel", "Minimos cuadrados", "Secante" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -171,7 +202,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Columnas:");
 
-        cbxF1.setBackground(new java.awt.Color(37, 45, 68));
         cbxF1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         cbxF1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
         cbxF1.setPreferredSize(new java.awt.Dimension(67, 25));
@@ -215,7 +245,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Filas:");
 
-        cbxF2.setBackground(new java.awt.Color(37, 45, 68));
         cbxF2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         cbxF2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
         cbxF2.setPreferredSize(new java.awt.Dimension(67, 25));
@@ -544,7 +573,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        tblJoradanE.setModel(new javax.swing.table.DefaultTableModel(
+        tblJordanE.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -552,7 +581,7 @@ public class Principal extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane9.setViewportView(tblJoradanE);
+        jScrollPane9.setViewportView(tblJordanE);
 
         tblJordanB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -615,6 +644,26 @@ public class Principal extends javax.swing.JFrame {
         ));
         jScrollPane12.setViewportView(tblResultadosJordan);
 
+        tblJordanR.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane13.setViewportView(tblJordanR);
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Matriz reducida:");
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("Valores resultantes:");
+
         javax.swing.GroupLayout pnlJordanLayout = new javax.swing.GroupLayout(pnlJordan);
         pnlJordan.setLayout(pnlJordanLayout);
         pnlJordanLayout.setHorizontalGroup(
@@ -649,14 +698,20 @@ public class Principal extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(pnlJordanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnRealizarJordan, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlJordanLayout.createSequentialGroup()
+                                .addGap(224, 224, 224)
+                                .addGroup(pnlJordanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlJordanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31))))
-            .addGroup(pnlJordanLayout.createSequentialGroup()
-                .addGap(192, 192, 192)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlJordanLayout.setVerticalGroup(
             pnlJordanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -685,9 +740,15 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(btnComprobacionJordan)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRealizarJordan)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlJordanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlJordanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         jPanel1.add(pnlJordan, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
@@ -701,18 +762,212 @@ public class Principal extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Método de matriz inversa");
 
+        jLabel23.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Cantidad de ecuaciones:");
+
+        cbxJordCE1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3" }));
+        cbxJordCE1.setPreferredSize(new java.awt.Dimension(208, 20));
+        cbxJordCE1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxJordCE1ItemStateChanged(evt);
+            }
+        });
+
+        tblInversaE.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane14.setViewportView(tblInversaE);
+
+        tblIversaB.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "B"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane15.setViewportView(tblIversaB);
+
+        btnComprobacionInversa.setText("Comprobar ecuaciones");
+        btnComprobacionInversa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprobacionInversaActionPerformed(evt);
+            }
+        });
+
+        tblEcuacionesInversa.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Ecuaciones"
+            }
+        ));
+        jScrollPane16.setViewportView(tblEcuacionesInversa);
+
+        jLabel24.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Matriz resultante:");
+
+        jLabel25.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Favor de escribir los 0");
+
+        btnRealizarInversa.setText("Realizar operación");
+        btnRealizarInversa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRealizarInversaActionPerformed(evt);
+            }
+        });
+
+        tblResultadosInversa.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null}
+            },
+            new String [] {
+                "x"
+            }
+        ));
+        jScrollPane17.setViewportView(tblResultadosInversa);
+
+        tblInversaR.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane18.setViewportView(tblInversaR);
+
+        jLabel26.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("Matriz reducida:");
+
+        jLabel27.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("Valores resultantes:");
+
+        tblInversaR2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane19.setViewportView(tblInversaR2);
+
+        jLabel28.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("Matriz resultante de la inversa:");
+
         javax.swing.GroupLayout pnlInversaLayout = new javax.swing.GroupLayout(pnlInversa);
         pnlInversa.setLayout(pnlInversaLayout);
         pnlInversaLayout.setHorizontalGroup(
             pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+            .addGroup(pnlInversaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInversaLayout.createSequentialGroup()
+                        .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlInversaLayout.createSequentialGroup()
+                                .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbxJordCE1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInversaLayout.createSequentialGroup()
+                                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnComprobacionInversa)
+                                .addGap(46, 46, 46)
+                                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlInversaLayout.createSequentialGroup()
+                                .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(pnlInversaLayout.createSequentialGroup()
+                                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(pnlInversaLayout.createSequentialGroup()
+                                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnRealizarInversa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)))
+                .addContainerGap())
         );
         pnlInversaLayout.setVerticalGroup(
             pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInversaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addContainerGap(464, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbxJordCE1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel24))
+                .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlInversaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlInversaLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(btnComprobacionInversa)))
+                .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlInversaLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnRealizarInversa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlInversaLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlInversaLayout.createSequentialGroup()
+                                .addGroup(pnlInversaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel28))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         jPanel1.add(pnlInversa, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
@@ -741,6 +996,56 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jPanel1.add(pnlSeidel, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
+
+        pnlMinimosCuadrados.setBackground(new java.awt.Color(37, 45, 68));
+        pnlMinimosCuadrados.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlMinimosCuadrados.setPreferredSize(new java.awt.Dimension(738, 511));
+
+        jLabel21.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Método de minimos cuadrados");
+
+        javax.swing.GroupLayout pnlMinimosCuadradosLayout = new javax.swing.GroupLayout(pnlMinimosCuadrados);
+        pnlMinimosCuadrados.setLayout(pnlMinimosCuadradosLayout);
+        pnlMinimosCuadradosLayout.setHorizontalGroup(
+            pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+        );
+        pnlMinimosCuadradosLayout.setVerticalGroup(
+            pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMinimosCuadradosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21)
+                .addContainerGap(464, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pnlMinimosCuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
+
+        pnlSecante.setBackground(new java.awt.Color(37, 45, 68));
+        pnlSecante.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlSecante.setPreferredSize(new java.awt.Dimension(738, 511));
+
+        jLabel22.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Método de Secante");
+
+        javax.swing.GroupLayout pnlSecanteLayout = new javax.swing.GroupLayout(pnlSecante);
+        pnlSecante.setLayout(pnlSecanteLayout);
+        pnlSecanteLayout.setHorizontalGroup(
+            pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+        );
+        pnlSecanteLayout.setVerticalGroup(
+            pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSecanteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addContainerGap(464, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pnlSecante, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1031,18 +1336,18 @@ public class Principal extends javax.swing.JFrame {
             modelo.addRow(new Object[]{0});
         }
         this.tblEcuaciones.setModel(modelo);
-        
+
         modelo = (DefaultTableModel) this.tblResultados.getModel();
         modelo.setRowCount(0);
         modelo.setColumnCount(0);
         for (int i = 0; i < valor; i++) {
-            int letra = i+120;
-            modelo.addColumn((char)letra);
+            int letra = i + 120;
+            modelo.addColumn((char) letra);
         }
         modelo.addColumn("Determinante");
         modelo.addRow(new Object[]{});
         this.tblResultados.setModel(modelo);
-        
+
     }//GEN-LAST:event_pnlEliGaussComponentShown
 
     private void cbxEliNEItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxEliNEItemStateChanged
@@ -1074,13 +1379,13 @@ public class Principal extends javax.swing.JFrame {
             modelo.addRow(new Object[]{0});
         }
         this.tblEcuaciones.setModel(modelo);
-        
+
         modelo = (DefaultTableModel) this.tblResultados.getModel();
         modelo.setRowCount(0);
         modelo.setColumnCount(0);
         for (int i = 0; i < valor; i++) {
-            int letra = i+120;
-            modelo.addColumn((char)letra);
+            int letra = i + 120;
+            modelo.addColumn((char) letra);
         }
         modelo.addColumn("Determinante");
         modelo.addRow(new Object[]{});
@@ -1091,16 +1396,16 @@ public class Principal extends javax.swing.JFrame {
         if (this.tblEcuaciones.isEditing()) {
             JOptionPane.showMessageDialog(this.btnComprobacionEliGaus, "Está siendo editada la tabla de las ecuaciones", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            hacerMatriz(this.tblEcuaciones, this.tblEliE, this.tblEliB);
+            hacerMatriz(this.tblEcuaciones, this.tblEliE, this.tblEliB, this.cbxEliNE);
         }
     }//GEN-LAST:event_btnComprobacionEliGausActionPerformed
 
     private void btnRealizarEliGausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarEliGausActionPerformed
-        int valor =  Integer.parseInt(this.cbxEliNE.getSelectedItem().toString());
+        int valor = Integer.parseInt(this.cbxEliNE.getSelectedItem().toString());
         int n = valor - 1;
-        double [][] a = new double[valor][valor];
-        double [] b = new double[valor];
-        double [] x = new double[n + 1];
+        double[][] a = new double[valor][valor];
+        double[] b = new double[valor];
+        double[] x = new double[n + 1];
         for (int i = 0; i < valor; i++) {
             for (int j = 0; j < valor; j++) {
                 a[i][j] = Double.parseDouble(this.tblEliE.getValueAt(i, j).toString());
@@ -1114,26 +1419,26 @@ public class Principal extends javax.swing.JFrame {
             det *= a[i][i];
             if (det == 0) {
                 JOptionPane.showMessageDialog(this.tblResultados, "Hay un cero en la diagonal", "Resultado", JOptionPane.INFORMATION_MESSAGE);
-            }else{
+            } else {
                 for (int k = i + 1; k <= n; k++) {
                     for (int j = i + 1; j <= n; j++) {
-                        a[k][j] = a[k][j] - a[k][i] * a[i][j]/a[i][i];
+                        a[k][j] = a[k][j] - a[k][i] * a[i][j] / a[i][i];
                     }
-                    b[k] = b[k] - a[k][i] * b[i]/a[i][i];
+                    b[k] = b[k] - a[k][i] * b[i] / a[i][i];
                 }
             }
         }
         det *= a[n][n];
         if (det == 0) {
             JOptionPane.showMessageDialog(this.tblResultados, "Hay un cero en la diagonal", "Resultado", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            x[n] = b[n]/a[n][n];
-            for (int i = n-1; i >= 0; i--) {
+        } else {
+            x[n] = b[n] / a[n][n];
+            for (int i = n - 1; i >= 0; i--) {
                 x[i] = b[i];
                 for (int j = i + 1; j <= n; j++) {
-                    x[i] -= a[i][j]*x[j];
+                    x[i] -= a[i][j] * x[j];
                 }
-                x[i] /= a[i][i]; 
+                x[i] /= a[i][i];
             }
         }
         for (int i = 0; i < x.length; i++) {
@@ -1144,7 +1449,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void cbxJordCEItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxJordCEItemStateChanged
         int valor = Integer.parseInt(this.cbxJordCE.getSelectedItem().toString());
-        DefaultTableModel modelo = (DefaultTableModel) this.tblJoradanE.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) this.tblJordanE.getModel();
         modelo.setColumnCount(0);
         modelo.setRowCount(0);
         for (int i = 0; i < valor; i++) {
@@ -1154,16 +1459,16 @@ public class Principal extends javax.swing.JFrame {
         for (int i = 0; i < valor; i++) {
             modelo.addRow(new Object[]{});
         }
-        this.tblJoradanE.setModel(modelo);
+        this.tblJordanE.setModel(modelo);
         modelo = (DefaultTableModel) this.tblJordanB.getModel();
         modelo.setRowCount(0);
         for (int i = 0; i < valor; i++) {
             modelo.addRow(new Object[]{0});
         }
         this.tblJordanB.setModel(modelo);
-        for (int i = 0; i < this.tblJoradanE.getRowCount(); i++) {
-            for (int j = 0; j < this.tblJoradanE.getColumnCount(); j++) {
-                this.tblJoradanE.setValueAt(0, i, j);
+        for (int i = 0; i < this.tblJordanE.getRowCount(); i++) {
+            for (int j = 0; j < this.tblJordanE.getColumnCount(); j++) {
+                this.tblJordanE.setValueAt(0, i, j);
             }
         }
         modelo = (DefaultTableModel) this.tblEcuacionesJordan.getModel();
@@ -1172,33 +1477,54 @@ public class Principal extends javax.swing.JFrame {
             modelo.addRow(new Object[]{0});
         }
         this.tblEcuacionesJordan.setModel(modelo);
-        
+
         modelo = (DefaultTableModel) this.tblResultadosJordan.getModel();
         modelo.setRowCount(0);
         modelo.setColumnCount(0);
         for (int i = 0; i < valor; i++) {
-            int letra = i+120;
-            modelo.addColumn((char)letra);
+            int letra = i + 120;
+            modelo.addColumn((char) letra);
         }
         modelo.addRow(new Object[]{});
         this.tblResultadosJordan.setModel(modelo);
+        
+        modelo = (DefaultTableModel) this.tblJordanR.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        modelo.addColumn("b");
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblJordanR.setModel(modelo);
     }//GEN-LAST:event_cbxJordCEItemStateChanged
 
     private void btnComprobacionJordanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobacionJordanActionPerformed
         if (this.tblEcuacionesJordan.isEditing()) {
             JOptionPane.showMessageDialog(this.btnComprobacionEliGaus, "Está siendo editada la tabla de las ecuaciones", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
-            hacerMatriz(this.tblEcuacionesJordan, this.tblJoradanE, this.tblJordanB);
+            hacerMatriz(this.tblEcuacionesJordan, this.tblJordanE, this.tblJordanB, this.cbxJordCE);
         }
     }//GEN-LAST:event_btnComprobacionJordanActionPerformed
 
     private void btnRealizarJordanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarJordanActionPerformed
-        // TODO add your handling code here:
+        int n = Integer.parseInt(this.cbxJordCE.getSelectedItem().toString());
+        int flag = 0;
+        double[][] matriz = new double[n][n+1];
+        this.llenarMatriz(matriz, n, this.tblJordanE, this.tblJordanB);
+        flag = this.reducirMatriz(matriz, n);
+        if (flag == 1) {
+            flag = this.consistencia(matriz, n, flag);
+        }
+        this.imprimirMatriz(matriz, n, flag, this.tblResultadosJordan, this.tblJordanR);
     }//GEN-LAST:event_btnRealizarJordanActionPerformed
 
     private void pnlJordanComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlJordanComponentShown
         int valor = Integer.parseInt(this.cbxJordCE.getSelectedItem().toString());
-        DefaultTableModel modelo = (DefaultTableModel) this.tblJoradanE.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) this.tblJordanE.getModel();
         modelo.setColumnCount(0);
         modelo.setRowCount(0);
         for (int i = 0; i < valor; i++) {
@@ -1208,16 +1534,16 @@ public class Principal extends javax.swing.JFrame {
         for (int i = 0; i < valor; i++) {
             modelo.addRow(new Object[]{});
         }
-        this.tblJoradanE.setModel(modelo);
+        this.tblJordanE.setModel(modelo);
         modelo = (DefaultTableModel) this.tblJordanB.getModel();
         modelo.setRowCount(0);
         for (int i = 0; i < valor; i++) {
             modelo.addRow(new Object[]{0});
         }
         this.tblJordanB.setModel(modelo);
-        for (int i = 0; i < this.tblJoradanE.getRowCount(); i++) {
-            for (int j = 0; j < this.tblJoradanE.getColumnCount(); j++) {
-                this.tblJoradanE.setValueAt(0, i, j);
+        for (int i = 0; i < this.tblJordanE.getRowCount(); i++) {
+            for (int j = 0; j < this.tblJordanE.getColumnCount(); j++) {
+                this.tblJordanE.setValueAt(0, i, j);
             }
         }
         modelo = (DefaultTableModel) this.tblEcuacionesJordan.getModel();
@@ -1226,22 +1552,47 @@ public class Principal extends javax.swing.JFrame {
             modelo.addRow(new Object[]{0});
         }
         this.tblEcuacionesJordan.setModel(modelo);
-        
+
         modelo = (DefaultTableModel) this.tblResultadosJordan.getModel();
         modelo.setRowCount(0);
         modelo.setColumnCount(0);
         for (int i = 0; i < valor; i++) {
-            int letra = i+120;
-            modelo.addColumn((char)letra);
+            int letra = i + 120;
+            modelo.addColumn((char) letra);
         }
         modelo.addRow(new Object[]{});
         this.tblResultadosJordan.setModel(modelo);
+        
+        modelo = (DefaultTableModel) this.tblJordanR.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        for (int i = 0; i < valor; i++) {
+            int caracter = i + 120;
+            modelo.addColumn((char) caracter);
+        }
+        modelo.addColumn("b");
+        for (int i = 0; i < valor; i++) {
+            modelo.addRow(new Object[]{});
+        }
+        this.tblJordanR.setModel(modelo);
     }//GEN-LAST:event_pnlJordanComponentShown
 
-    public void hacerMatriz(JTable tablaEntrada, JTable tablaObjetivoMatriz, JTable tablaObjetivoVector) {
+    private void cbxJordCE1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxJordCE1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxJordCE1ItemStateChanged
+
+    private void btnComprobacionInversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobacionInversaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnComprobacionInversaActionPerformed
+
+    private void btnRealizarInversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarInversaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRealizarInversaActionPerformed
+
+    public void hacerMatriz(JTable tablaEntrada, JTable tablaObjetivoMatriz, JTable tablaObjetivoVector, JComboBox combo) {
         String[] cadenaPositiva;
         String[] sobrante;
-        int cantidad = Integer.parseInt(this.cbxEliNE.getSelectedItem().toString());
+        int cantidad = Integer.parseInt(combo.getSelectedItem().toString());
         double enteros[][];
         double vector[];
         enteros = new double[cantidad][cantidad];
@@ -1294,6 +1645,80 @@ public class Principal extends javax.swing.JFrame {
         }
     }
 
+    public void llenarMatriz(double[][] matriz, int n, JTable tablaM, JTable tablaV) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (j == n) {
+                    matriz[i][j] = Double.parseDouble(tablaV.getValueAt(i, 0).toString());
+                } else {
+                    matriz[i][j] = Double.parseDouble(tablaM.getValueAt(i, j).toString());
+                }
+            }
+        }
+    }
+
+    public int reducirMatriz(double[][] matriz, int n) {
+        int c = 0, flag = 0;
+        for (int i = 0; i < n; i++) {
+            if (matriz[i][i] == 0) {
+                while (matriz[i + c][i] == 0 && (i + c) < n) {
+                    c++;
+                    if ((i + c) == n) {
+                        flag = 1;
+                        break;
+                    }
+                    for (int j = i, k = 0; k <= n; k++) {
+                        double temp = matriz[j][k];
+                        matriz[j][k] = matriz[j + c][k];
+                        matriz[j + c][k] = temp;
+                    }
+                }
+            }
+            for (int j = 0; j < n; j++) {
+                if (i != j) {
+                    double pro = matriz[j][i] / matriz[i][i];
+                    for (int k = 0; k <= n; k++) {
+                        matriz[j][k] = matriz[j][k] - (matriz[i][k] * pro);
+                    }
+                }
+            }
+        }
+        return flag;
+    }
+    
+    public int consistencia(double[][] matriz, int n, int flag){
+        double suma = 0;
+        flag = 3;
+        for (int i = 0; i < n; i++) {
+            suma = 0;
+            for (int j = 0; j < n; j++) {
+                suma += matriz[i][j];
+                if (suma == matriz[i][j]) {
+                    flag = 2;
+                }
+            }
+
+        }
+        return flag;
+    }
+
+    public void imprimirMatriz(double[][] matriz, int n, int flag, JTable tablaResultado, JTable tblMatriz){
+        if (flag == 2) {
+            JOptionPane.showMessageDialog(this.tblJordanR, "La matriz tiene soluciones multiples", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        } else if (flag == 3) {
+            JOptionPane.showMessageDialog(this.tblJordanR, "La matriz no tiene solución", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            for (int i = 0; i < n; i++) {
+                tablaResultado.setValueAt(matriz[i][n]/matriz[i][i], 0, i);
+            }
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j <= n; j++) {
+                    tblMatriz.setValueAt(matriz[i][j], i, j);
+                }
+            }
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -1331,9 +1756,11 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnComprobacionEliGaus;
+    private javax.swing.JButton btnComprobacionInversa;
     private javax.swing.JButton btnComprobacionJordan;
     private javax.swing.JButton btnMultiplicacion;
     private javax.swing.JButton btnRealizarEliGaus;
+    private javax.swing.JButton btnRealizarInversa;
     private javax.swing.JButton btnRealizarJordan;
     private javax.swing.JComboBox<String> cbxC1;
     private javax.swing.JComboBox<String> cbxC2;
@@ -1341,6 +1768,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxF1;
     private javax.swing.JComboBox<String> cbxF2;
     private javax.swing.JComboBox<String> cbxJordCE;
+    private javax.swing.JComboBox<String> cbxJordCE1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1351,7 +1779,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1365,6 +1803,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1376,21 +1821,31 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPanel pnlEliGauss;
     private javax.swing.JPanel pnlInversa;
     private javax.swing.JPanel pnlJordan;
+    private javax.swing.JPanel pnlMinimosCuadrados;
     private javax.swing.JPanel pnlMultiplicacion;
+    private javax.swing.JPanel pnlSecante;
     private javax.swing.JPanel pnlSeidel;
     private javax.swing.JTable tblEcuaciones;
+    private javax.swing.JTable tblEcuacionesInversa;
     private javax.swing.JTable tblEcuacionesJordan;
     private javax.swing.JTable tblEliB;
     private javax.swing.JTable tblEliE;
-    private javax.swing.JTable tblJoradanE;
+    private javax.swing.JTable tblInversaE;
+    private javax.swing.JTable tblInversaR;
+    private javax.swing.JTable tblInversaR2;
+    private javax.swing.JTable tblIversaB;
     private javax.swing.JTable tblJordanB;
+    private javax.swing.JTable tblJordanE;
+    private javax.swing.JTable tblJordanR;
     private javax.swing.JTable tblMA;
     private javax.swing.JTable tblMB;
     private javax.swing.JTable tblMC;
     private javax.swing.JTable tblResultados;
+    private javax.swing.JTable tblResultadosInversa;
     private javax.swing.JTable tblResultadosJordan;
     // End of variables declaration//GEN-END:variables
 }
