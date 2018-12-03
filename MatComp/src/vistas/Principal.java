@@ -161,7 +161,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         txtC1Min = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        txtC1Min1 = new javax.swing.JTextField();
+        txtC2Min = new javax.swing.JTextField();
         btnLlenarMin = new javax.swing.JButton();
         jScrollPane23 = new javax.swing.JScrollPane();
         tblMinimos = new javax.swing.JTable();
@@ -174,7 +174,7 @@ public class Principal extends javax.swing.JFrame {
         txtValorBusqueda = new javax.swing.JTextField();
         btnBusquedaMin = new javax.swing.JButton();
         jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
+        lblYMin = new javax.swing.JLabel();
         pnlSecante = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
 
@@ -1208,6 +1208,11 @@ public class Principal extends javax.swing.JFrame {
         pnlMinimosCuadrados.setBackground(new java.awt.Color(37, 45, 68));
         pnlMinimosCuadrados.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pnlMinimosCuadrados.setPreferredSize(new java.awt.Dimension(738, 511));
+        pnlMinimosCuadrados.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlMinimosCuadradosComponentShown(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -1227,6 +1232,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel37.setText("Nombre columna 2:");
 
         btnLlenarMin.setText("Llenar tabla");
+        btnLlenarMin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLlenarMinActionPerformed(evt);
+            }
+        });
 
         tblMinimos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1239,6 +1249,11 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane23.setViewportView(tblMinimos);
 
         btnOperacionMin.setText("Realizar operación");
+        btnOperacionMin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOperacionMinActionPerformed(evt);
+            }
+        });
 
         jLabel35.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
@@ -1261,14 +1276,19 @@ public class Principal extends javax.swing.JFrame {
         jLabel39.setText("Valor de X que desea buscar:");
 
         btnBusquedaMin.setText("Realizar busqueda");
+        btnBusquedaMin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBusquedaMinActionPerformed(evt);
+            }
+        });
 
         jLabel40.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(255, 255, 255));
         jLabel40.setText("La Y en X es de:");
 
-        jLabel41.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("Y");
+        lblYMin.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lblYMin.setForeground(new java.awt.Color(255, 255, 255));
+        lblYMin.setText("Y");
 
         javax.swing.GroupLayout pnlMinimosCuadradosLayout = new javax.swing.GroupLayout(pnlMinimosCuadrados);
         pnlMinimosCuadrados.setLayout(pnlMinimosCuadradosLayout);
@@ -1292,7 +1312,7 @@ public class Principal extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtC1Min1))))
+                                .addComponent(txtC2Min))))
                     .addGroup(pnlMinimosCuadradosLayout.createSequentialGroup()
                         .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING)
@@ -1311,7 +1331,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(pnlMinimosCuadradosLayout.createSequentialGroup()
                         .addComponent(jLabel40)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel41)))
+                        .addComponent(lblYMin)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnOperacionMin, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
@@ -1334,7 +1354,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel37))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtC1Min1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtC2Min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtC1Min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtFilasMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1355,7 +1375,7 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlMinimosCuadradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel40)
-                            .addComponent(jLabel41)))
+                            .addComponent(lblYMin)))
                     .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOperacionMin)
@@ -2127,7 +2147,7 @@ public class Principal extends javax.swing.JFrame {
         double[][] matrizA = new double[valor][valor];
         double[] vectorI = new double[valor];
         modelo.setRowCount(0);
-        
+
         for (int i = 0; i < valor; i++) {
             for (int j = 0; j < valor; j++) {
                 matrizA[i][j] = Double.parseDouble(this.tblSeidelE.getValueAt(i, j).toString());
@@ -2252,6 +2272,71 @@ public class Principal extends javax.swing.JFrame {
         }
         this.tblIteraciones.setModel(modelo);
     }//GEN-LAST:event_pnlSeidelComponentShown
+
+    private void pnlMinimosCuadradosComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlMinimosCuadradosComponentShown
+        this.btnOperacionMin.setEnabled(false);
+        this.btnBusquedaMin.setEnabled(false);
+        this.lblBMin.setVisible(false);
+        this.lblMMin.setVisible(false);
+        this.lblYMin.setVisible(false);
+    }//GEN-LAST:event_pnlMinimosCuadradosComponentShown
+
+    private void btnLlenarMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLlenarMinActionPerformed
+        int rows = 0;
+        String columna1 = "";
+        String columna2 = "";
+        DefaultTableModel modelo = (DefaultTableModel) this.tblMinimos.getModel();
+        modelo.setRowCount(0);
+        modelo.setColumnCount(0);
+        if (!this.txtFilasMin.getText().isEmpty() && !this.txtC1Min.getText().isEmpty() && !this.txtC2Min.getText().isEmpty()) {
+            rows = Integer.parseInt(this.txtFilasMin.getText());
+            columna1 = this.txtC1Min.getText();
+            columna2 = this.txtC2Min.getText();
+            modelo.addColumn(columna1);
+            modelo.addColumn(columna2);
+            for (int i = 0; i < rows; i++) {
+                modelo.addRow(new Object[]{});
+            }
+            this.tblMinimos.setModel(modelo);
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < 2; j++) {
+                    this.tblMinimos.setValueAt(0, i, j);
+                }
+            }
+            this.btnOperacionMin.setEnabled(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Favor de llenar los campos de texto", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnLlenarMinActionPerformed
+
+    private void btnOperacionMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOperacionMinActionPerformed
+        int sumX = 0, sumY = 0, sumXCuad = 0, sumYX = 0;
+        double m = 0, b = 0;
+        int filas = this.tblMinimos.getRowCount();
+        for (int i = 1; i <= filas; i++) {
+            sumX += i;
+            sumY += Integer.parseInt(this.tblMinimos.getValueAt(i-1, 1).toString());
+            sumYX += Integer.parseInt(this.tblMinimos.getValueAt(i-1, 1).toString()) * i;
+            sumXCuad += Math.pow(i, 2);
+        }
+        m = ((filas * sumYX) - (sumX * sumY)) / ((filas * sumXCuad) - (Math.pow(sumX, 2)));
+        b = ((sumY * sumXCuad) - (sumX * sumYX)) / ((filas * sumXCuad) - (Math.pow(sumX, 2)));
+        this.lblBMin.setText(b + "");
+        this.lblMMin.setText(m + "");
+        this.lblBMin.setVisible(true);
+        this.lblMMin.setVisible(true);
+        this.btnBusquedaMin.setEnabled(true);
+    }//GEN-LAST:event_btnOperacionMinActionPerformed
+
+    private void btnBusquedaMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaMinActionPerformed
+        int x = Integer.parseInt(this.txtValorBusqueda.getText());
+        double y = 0;
+        double b = Double.parseDouble(this.lblBMin.getText());
+        double m = Double.parseDouble(this.lblMMin.getText());
+        y = ((m*x) + b);
+        this.lblYMin.setText(y + "");
+        this.lblYMin.setVisible(true);
+    }//GEN-LAST:event_btnBusquedaMinActionPerformed
 
     public void hacerMatriz(JTable tablaEntrada, JTable tablaObjetivoMatriz, JTable tablaObjetivoVector, JComboBox combo) {
         String[] cadenaPositiva;
@@ -2555,7 +2640,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2595,6 +2679,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel lblBMin;
     private javax.swing.JLabel lblMMin;
+    private javax.swing.JLabel lblYMin;
     private javax.swing.JPanel pnlEliGauss;
     private javax.swing.JPanel pnlInversa;
     private javax.swing.JPanel pnlJordan;
@@ -2626,7 +2711,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable tblSeidelB;
     private javax.swing.JTable tblSeidelE;
     private javax.swing.JTextField txtC1Min;
-    private javax.swing.JTextField txtC1Min1;
+    private javax.swing.JTextField txtC2Min;
     private javax.swing.JTextField txtFilasMin;
     private javax.swing.JTextField txtValorBusqueda;
     // End of variables declaration//GEN-END:variables
