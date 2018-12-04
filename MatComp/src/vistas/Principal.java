@@ -5,6 +5,7 @@
  */
 package vistas;
 
+import clases.Funcion;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -177,6 +178,18 @@ public class Principal extends javax.swing.JFrame {
         lblYMin = new javax.swing.JLabel();
         pnlSecante = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        tblSecante = new javax.swing.JTable();
+        jLabel41 = new javax.swing.JLabel();
+        txtFuncion = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        txtValor1 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        txtValor2 = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        txtError = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1040, 630));
@@ -1393,18 +1406,99 @@ public class Principal extends javax.swing.JFrame {
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("Método de Secante");
 
+        tblSecante.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Aprox. raíz", "Error aprox"
+            }
+        ));
+        jScrollPane25.setViewportView(tblSecante);
+
+        jLabel41.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("Ingrese la función:");
+
+        jLabel42.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setText("Primer valor del intervalo:");
+
+        jLabel43.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel43.setText("Segundo valor del intervalo:");
+
+        jLabel44.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel44.setText("Error porcentual:");
+
+        jButton1.setText("Realizar operación");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlSecanteLayout = new javax.swing.GroupLayout(pnlSecante);
         pnlSecante.setLayout(pnlSecanteLayout);
         pnlSecanteLayout.setHorizontalGroup(
             pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+            .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSecanteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlSecanteLayout.createSequentialGroup()
+                        .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel41))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtValor1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFuncion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlSecanteLayout.createSequentialGroup()
+                        .addComponent(jLabel43)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtValor2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSecanteLayout.createSequentialGroup()
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtError, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlSecanteLayout.setVerticalGroup(
             pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSecanteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel22)
-                .addContainerGap(464, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlSecanteLayout.createSequentialGroup()
+                        .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel41)
+                            .addComponent(txtFuncion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel42)
+                            .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel43)
+                            .addComponent(txtValor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlSecanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel44)
+                            .addComponent(txtError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel1.add(pnlSecante, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 77, -1, -1));
@@ -2338,6 +2432,15 @@ public class Principal extends javax.swing.JFrame {
         this.lblYMin.setVisible(true);
     }//GEN-LAST:event_btnBusquedaMinActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (!this.txtFuncion.getText().isEmpty() && !this.txtValor1.getText().isEmpty() && !this.txtValor2.getText().isEmpty() && !this.txtError.getText().isEmpty()) {
+            Funcion f = new Funcion(this.txtFuncion.getText());
+            this.tblSecante.setModel(this.ObtenerRaiz(f, Double.parseDouble(this.txtValor1.getText()), Double.parseDouble(this.txtValor2.getText()), Double.parseDouble(this.txtError.getText()), this.tblSecante));
+        }else{
+            JOptionPane.showMessageDialog(null, "Favor de llenar todos los campos", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public void hacerMatriz(JTable tablaEntrada, JTable tablaObjetivoMatriz, JTable tablaObjetivoVector, JComboBox combo) {
         String[] cadenaPositiva;
         String[] sobrante;
@@ -2549,6 +2652,29 @@ public class Principal extends javax.swing.JFrame {
         }
     }
 
+    public double ErrorPorcentual(double p, double p1){
+        double error = 0;
+        error = Math.abs((p - p1) / p) * 100;
+        return error;
+    }
+    
+    public DefaultTableModel ObtenerRaiz(Funcion funcion, double valor1, double valor2, double error, JTable respuesta){
+        double raiz = 0;
+        DefaultTableModel modelo = (DefaultTableModel) respuesta.getModel();
+        double x2 = 0;
+        int k = 0;
+        double e = 100;
+        while (e > error) {
+            x2 = valor2 - funcion.evaluate(valor2) * (valor2 - valor1)/  (funcion.evaluate(valor2) - funcion.evaluate(valor1));
+            e = ErrorPorcentual(valor2, x2);
+            valor1 = valor2;
+            valor2 = x2;
+            raiz = x2;
+            modelo.addRow(new Object[]{raiz, e + "%"});
+        }
+        
+        return modelo;
+    }
     /**
      * @param args the command line arguments
      */
@@ -2605,6 +2731,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxInversaCE;
     private javax.swing.JComboBox<String> cbxJordCE;
     private javax.swing.JComboBox<String> cbxSeidelCE;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2640,6 +2767,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2664,6 +2795,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -2677,6 +2809,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JLabel lblBMin;
     private javax.swing.JLabel lblMMin;
     private javax.swing.JLabel lblYMin;
@@ -2708,11 +2841,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable tblResultados;
     private javax.swing.JTable tblResultadosInversa;
     private javax.swing.JTable tblResultadosJordan;
+    private javax.swing.JTable tblSecante;
     private javax.swing.JTable tblSeidelB;
     private javax.swing.JTable tblSeidelE;
     private javax.swing.JTextField txtC1Min;
     private javax.swing.JTextField txtC2Min;
+    private javax.swing.JTextField txtError;
     private javax.swing.JTextField txtFilasMin;
+    private javax.swing.JTextField txtFuncion;
+    private javax.swing.JTextField txtValor1;
+    private javax.swing.JTextField txtValor2;
     private javax.swing.JTextField txtValorBusqueda;
     // End of variables declaration//GEN-END:variables
 }
